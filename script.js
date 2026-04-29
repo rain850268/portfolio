@@ -47,8 +47,25 @@ filterBtns.forEach(btn => {
   });
 });
 
+/* ── Case Study Tab Switching ── */
+const caseTabs    = document.querySelectorAll('.case-tab');
+const caseContent = document.querySelectorAll('.case-tab-content');
+
+if (caseTabs.length) {
+  caseTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      caseTabs.forEach(t => t.classList.remove('active'));
+      caseContent.forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      const target = document.getElementById('tab-' + tab.dataset.tab);
+      if (target) target.classList.add('active');
+    });
+  });
+}
+
 /* ── Contact form → mailto ── */
-document.getElementById('contactForm').addEventListener('submit', e => {
+const contactForm = document.getElementById('contactForm');
+if (contactForm) contactForm.addEventListener('submit', e => {
   e.preventDefault();
   const name    = document.getElementById('name').value.trim();
   const email   = document.getElementById('email').value.trim();
