@@ -203,8 +203,103 @@
     }
     .social-img-card img { width: 100%; height: auto; display: block; }
 
+    /* ── Design Note ── */
+    .design-note {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .78rem;
+      color: var(--text-light);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: .28rem .75rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ── LP Slider ── */
+    .lp-slider-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+    .lp-slider-arrows { display: flex; gap: .5rem; }
+    .lp-arrow {
+      width: 34px; height: 34px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--bg);
+      cursor: pointer;
+      font-size: .88rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background var(--t), border-color var(--t), color var(--t);
+      line-height: 1;
+    }
+    .lp-arrow:hover { background: var(--text); color: var(--white); border-color: var(--text); }
+    .lp-arrow:disabled { opacity: .28; pointer-events: none; }
+
+    .lp-outer { overflow: hidden; }
+    .lp-track {
+      display: flex;
+      gap: 1.25rem;
+      transition: transform .42s ease;
+    }
+    .lp-slide {
+      flex-shrink: 0;
+      width: calc(50% - .625rem);
+    }
+    .lp-card {
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .lp-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .85rem 1.1rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+    }
+    .lp-card-info { display: flex; flex-direction: column; gap: .15rem; min-width: 0; }
+    .lp-card-name { font-size: .88rem; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .lp-card-sub { font-size: .74rem; color: var(--text-light); }
+    .lp-toggle-wrap { display: flex; border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; flex-shrink: 0; }
+    .lp-toggle {
+      padding: .28rem .9rem;
+      font-family: var(--sans);
+      font-size: .75rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-mid);
+      transition: background var(--t), color var(--t);
+      white-space: nowrap;
+    }
+    .lp-toggle.active { background: var(--text); color: var(--white); }
+
+    .lp-img-area { max-height: 480px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
+    .lp-img-area::-webkit-scrollbar { width: 3px; }
+    .lp-img-area::-webkit-scrollbar-thumb { background: var(--border); }
+    .lp-img-panel { display: none; }
+    .lp-img-panel.active { display: block; }
+    .lp-img-panel img { width: 100%; display: block; }
+
+    .lp-dots { display: flex; justify-content: center; gap: .5rem; margin-top: 1.25rem; }
+    .lp-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--border); border: none; cursor: pointer;
+      padding: 0; transition: background var(--t), transform var(--t);
+    }
+    .lp-dot.active { background: var(--text); transform: scale(1.3); }
+
     /* ── Responsive ── */
     @media (max-width: 900px) {
+      .lp-slide { width: 85%; }
       .sp-nav { padding: 0 1.5rem; }
       .sp-inner { padding: 0 1.5rem; }
       .video-grid { grid-template-columns: 1fr; }
@@ -222,6 +317,7 @@
       <div class="sp-anchors">
         <a href="#video">短影片企劃剪輯</a>
         <a href="#website">官網設計</a>
+        <a href="#lp">Landing Page 商品頁企劃</a>
         <a href="#social">社群企劃</a>
       </div>
     </nav>
@@ -298,6 +394,7 @@
           <span class="eyebrow">Website Design</span>
           <h2>官網設計</h2>
           <p>協助品牌從零建置電商官網，涵蓋 Banner、分類架構、會員機制與 CRM 串接，使用 Waca、Cyberbiz、Shopify、Shopline、Pinkoi、蝦皮等平台。</p>
+          <span class="design-note">※ 平面設計另外跟設計師合作</span>
         </div>
 
         <div class="tab-group" data-tabs>
@@ -372,7 +469,163 @@
     </section>
 
     <!-- ════════════════════════════════
-         3  社群企劃
+         3  Landing Page 商品頁企劃
+    ════════════════════════════════ -->
+    <section class="sp-section" id="lp">
+      <div class="sp-inner">
+        <div class="sp-heading-block">
+          <span class="eyebrow">Landing Page</span>
+          <h2>Landing Page 商品頁企劃</h2>
+          <p>從商品特性出發規劃銷售頁架構，包含賣點排序、視覺框架、文案方向，提供完整頁面企劃文件，並與設計師協作完成最終頁面。</p>
+          <span class="design-note">※ 平面設計另外跟設計師合作</span>
+        </div>
+
+        <div class="lp-slider-header">
+          <div style="font-size:.82rem;color:var(--text-light);">滑動查看企劃 → 成品</div>
+          <div class="lp-slider-arrows">
+            <button class="lp-arrow" id="lpPrev">←</button>
+            <button class="lp-arrow" id="lpNext">→</button>
+          </div>
+        </div>
+
+        <div class="lp-outer">
+          <div class="lp-track" id="lpTrack">
+
+            <!-- 1. 3ZeBra 折折墊 -->
+            <div class="lp-slide">
+              <div class="lp-card">
+                <div class="lp-card-top">
+                  <div class="lp-card-info">
+                    <div class="lp-card-name">3ZeBra 三隻斑馬</div>
+                    <div class="lp-card-sub">折折墊募資頁面</div>
+                  </div>
+                  <div class="lp-toggle-wrap">
+                    <button class="lp-toggle active" data-mode="plan">企劃</button>
+                    <button class="lp-toggle" data-mode="result">成品</button>
+                  </div>
+                </div>
+                <div class="lp-img-area">
+                  <div class="lp-img-panel active" data-panel="plan">
+                    <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/123632_90148.png" alt="3ZeBra 折折墊 企劃" loading="lazy">
+                  </div>
+                  <div class="lp-img-panel" data-panel="result">
+                    <img src="lp-3zebra-result.jpg" alt="3ZeBra 折折墊 成品" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. 紅杉宅料理 -->
+            <div class="lp-slide">
+              <div class="lp-card">
+                <div class="lp-card-top">
+                  <div class="lp-card-info">
+                    <div class="lp-card-name">紅杉宅料理</div>
+                    <div class="lp-card-sub">新版商品頁</div>
+                  </div>
+                  <div class="lp-toggle-wrap">
+                    <button class="lp-toggle active" data-mode="plan">企劃</button>
+                    <button class="lp-toggle" data-mode="result">成品</button>
+                  </div>
+                </div>
+                <div class="lp-img-area">
+                  <div class="lp-img-panel active" data-panel="plan">
+                    <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/27478_938612.png" alt="紅杉宅料理 企劃" loading="lazy">
+                  </div>
+                  <div class="lp-img-panel" data-panel="result">
+                    <img src="lp-hongsan-result.jpg" alt="紅杉宅料理 成品" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. 4 Friends 皮在癢 -->
+            <div class="lp-slide">
+              <div class="lp-card">
+                <div class="lp-card-top">
+                  <div class="lp-card-info">
+                    <div class="lp-card-name">4 Friends 皮在癢</div>
+                    <div class="lp-card-sub">商品頁面更新</div>
+                  </div>
+                  <div class="lp-toggle-wrap">
+                    <button class="lp-toggle active" data-mode="plan">企劃</button>
+                    <button class="lp-toggle" data-mode="result">成品</button>
+                  </div>
+                </div>
+                <div class="lp-img-area">
+                  <div class="lp-img-panel active" data-panel="plan">
+                    <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/861385_715758.png" alt="4 Friends 皮在癢 企劃" loading="lazy">
+                  </div>
+                  <div class="lp-img-panel" data-panel="result">
+                    <img src="lp-4friends-result.jpg" alt="4 Friends 皮在癢 成品" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. LifeRiCH 太空碗 -->
+            <div class="lp-slide">
+              <div class="lp-card">
+                <div class="lp-card-top">
+                  <div class="lp-card-info">
+                    <div class="lp-card-name">LifeRiCH 太空碗</div>
+                    <div class="lp-card-sub">新品頁面企劃</div>
+                  </div>
+                  <div class="lp-toggle-wrap">
+                    <button class="lp-toggle active" data-mode="plan">企劃</button>
+                    <button class="lp-toggle" data-mode="result">成品</button>
+                  </div>
+                </div>
+                <div class="lp-img-area">
+                  <div class="lp-img-panel active" data-panel="plan">
+                    <img src="lp-spacebox-plan.png" alt="LifeRiCH 太空碗 企劃" loading="lazy">
+                  </div>
+                  <div class="lp-img-panel" data-panel="result">
+                    <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/609183_605314.jpeg" alt="LifeRiCH 太空碗 成品" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Eira Care 面膜 -->
+            <div class="lp-slide">
+              <div class="lp-card">
+                <div class="lp-card-top">
+                  <div class="lp-card-info">
+                    <div class="lp-card-name">Eira Care 面膜</div>
+                    <div class="lp-card-sub">靈芝積雪草修護保濕面膜</div>
+                  </div>
+                  <div class="lp-toggle-wrap">
+                    <button class="lp-toggle active" data-mode="plan">企劃</button>
+                    <button class="lp-toggle" data-mode="result">成品</button>
+                  </div>
+                </div>
+                <div class="lp-img-area">
+                  <div class="lp-img-panel active" data-panel="plan">
+                    <img src="lp-eiracare-plan.png" alt="Eira Care 面膜 企劃" loading="lazy">
+                  </div>
+                  <div class="lp-img-panel" data-panel="result">
+                    <img src="lp-eiracare-result.jpg" alt="Eira Care 面膜 成品" loading="lazy">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="lp-dots" id="lpDots">
+          <button class="lp-dot active"></button>
+          <button class="lp-dot"></button>
+          <button class="lp-dot"></button>
+          <button class="lp-dot"></button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         4  社群企劃
     ════════════════════════════════ -->
     <section class="sp-section" id="social">
       <div class="sp-inner">
@@ -380,6 +633,7 @@
           <span class="eyebrow">Social Media</span>
           <h2>社群企劃</h2>
           <p>LINE、Instagram 貼文內容企劃與視覺設計，從品牌策略到排程發文全程統籌。</p>
+          <span class="design-note">※ 平面設計另外跟設計師合作</span>
         </div>
 
         <div class="tab-group" data-tabs>
@@ -453,6 +707,7 @@
   </main>
 
   <script>
+    // Tab groups
     document.querySelectorAll('[data-tabs]').forEach(group => {
       group.querySelectorAll('.tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -463,6 +718,47 @@
         });
       });
     });
+
+    // LP 企劃/成品 toggle
+    document.querySelectorAll('.lp-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.lp-card');
+        const mode = btn.dataset.mode;
+        card.querySelectorAll('.lp-toggle').forEach(b => b.classList.remove('active'));
+        card.querySelectorAll('.lp-img-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        card.querySelector('[data-panel="' + mode + '"]').classList.add('active');
+      });
+    });
+
+    // LP Slider
+    (function() {
+      const track  = document.getElementById('lpTrack');
+      const slides = track.querySelectorAll('.lp-slide');
+      const dots   = document.querySelectorAll('#lpDots .lp-dot');
+      const prev   = document.getElementById('lpPrev');
+      const next   = document.getElementById('lpNext');
+      let idx = 0;
+
+      function visibleCount() { return window.innerWidth <= 900 ? 1 : 2; }
+
+      function update() {
+        const vc = visibleCount();
+        const gap = 20;
+        const totalWidth = track.parentElement.clientWidth;
+        const slideW = (totalWidth - gap * (vc - 1)) / vc;
+        track.style.transform = 'translateX(-' + idx * (slideW + gap) + 'px)';
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+        prev.disabled = idx === 0;
+        next.disabled = idx >= slides.length - vc;
+      }
+
+      prev.addEventListener('click', () => { if (idx > 0) { idx--; update(); } });
+      next.addEventListener('click', () => { if (idx < slides.length - visibleCount()) { idx++; update(); } });
+      dots.forEach((dot, i) => dot.addEventListener('click', () => { idx = i; update(); }));
+      window.addEventListener('resize', () => { idx = 0; update(); });
+      update();
+    })();
   </script>
 
 </body>
