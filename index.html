@@ -34,38 +34,28 @@
     </div>
   </header>
 
-  <!-- ── Hero ── -->
-  <section class="hero" id="hero">
-    <div class="container">
-      <div class="hero-content">
-        <p class="eyebrow reveal">數位行銷顧問 · 自由接案</p>
-        <h1 class="hero-name reveal">
-          <span class="hero-name-zh">呂宜庭</span>
-          <span class="hero-name-en">Josephine Lu</span>
-        </h1>
-        <p class="hero-desc reveal">Meta 廣告 · 行銷企劃 · 社群經營 · 官網建立 · 影片企劃</p>
-        <div class="hero-actions reveal">
-          <a href="#works" class="btn btn-primary">瀏覽作品</a>
-          <a href="#contact" class="btn btn-outline">預約諮詢</a>
+  <!-- ── Hero + About (merged) ── -->
+  <section class="about" id="about">
+    <div class="about-photo">
+      <img src="hero-photo.jpg" alt="呂宜庭 Josephine Lu" />
+      <div class="about-contact-bar">
+        <div class="about-contact-item">
+          <span class="about-contact-label">LINE</span>
+          <span>rain850268</span>
+        </div>
+        <div class="about-contact-item">
+          <span class="about-contact-label">Email</span>
+          <span>rain850268@gmail.com</span>
         </div>
       </div>
     </div>
-    <div class="hero-scroll">
-      <span class="hero-scroll-line"></span>
-      <span class="hero-scroll-dot"></span>
-    </div>
-  </section>
-
-  <!-- ── About ── -->
-  <section class="about" id="about">
-    <div class="about-photo">
-      <div class="about-photo-ring"></div>
-      <div class="about-photo-ring"></div>
-      <div class="about-photo-ring"></div>
-    </div>
     <div class="about-content">
-      <p class="eyebrow reveal">About</p>
-      <h2 class="section-heading reveal">結果導向的<br>數位行銷策略師</h2>
+      <p class="eyebrow reveal">數位行銷顧問 · 自由接案</p>
+      <h1 class="hero-name reveal" style="margin-bottom:1.25rem;">
+        <span class="hero-name-zh">呂宜庭</span>
+        <span class="hero-name-en">Josephine Lu</span>
+      </h1>
+      <h2 class="section-heading reveal">與你並肩作戰的<br>數位行銷策略師</h2>
       <p class="body-text reveal">
         擁有超過 6 年電商實務經驗，歷經平面設計、剪輯師、廣告投手到品牌行銷經理，熟悉從內容製作到整體營運的每個環節。
       </p>
@@ -105,8 +95,7 @@
       <div class="svc-grid">
 
         <div class="svc-card reveal">
-          <div class="svc-thumb svc-thumb-1">
-            <span class="svc-thumb-label">Ads</span>
+          <div class="svc-thumb svc-thumb-1" style="background-image:url(svc-meta.jpg);background-size:cover;background-position:center;">
           </div>
           <div class="svc-body">
             <h3 class="svc-title">Meta 廣告投放</h3>
@@ -122,8 +111,7 @@
         </div>
 
         <div class="svc-card reveal">
-          <div class="svc-thumb svc-thumb-2">
-            <span class="svc-thumb-label">Plan</span>
+          <div class="svc-thumb svc-thumb-2" style="background-image:url(svc-marketing.jpg);background-size:cover;background-position:center;">
           </div>
           <div class="svc-body">
             <h3 class="svc-title">行銷企劃 · 品牌策略</h3>
@@ -139,8 +127,7 @@
         </div>
 
         <div class="svc-card reveal">
-          <div class="svc-thumb svc-thumb-3">
-            <span class="svc-thumb-label">Ops</span>
+          <div class="svc-thumb svc-thumb-3" style="background-image:url(svc-social.jpg);background-size:cover;background-position:center;">
           </div>
           <div class="svc-body">
             <h3 class="svc-title">社群 · 官網 · 影片</h3>
@@ -159,6 +146,24 @@
     </div>
   </section>
 
+  <!-- ── Dashboard Showcase ── -->
+  <section class="dash-showcase" id="dashboard">
+    <div class="container">
+      <div class="dash-showcase-inner">
+        <div>
+          <p class="eyebrow reveal">Data Dashboard</p>
+          <span class="dash-showcase-sub reveal">視覺化數據圖表、分析</span>
+          <h2 class="section-heading reveal">讓數據說話，<br>讓決策更快</h2>
+          <p class="body-text reveal">針對長期合作客戶，提供客製化的即時成效儀表板。整合 LINE、EDM、自動化行銷腳本等多渠道數據，以視覺化方式呈現 ROAS、回購率、觸及成本等核心指標，讓每一筆預算的流向都清晰可追溯。</p>
+          <a href="#contact" class="btn btn-primary reveal" style="width:fit-content;margin-top:.5rem;">預約諮詢</a>
+        </div>
+        <div class="dash-showcase-img reveal">
+          <img src="dashboard-preview.jpg" alt="成效儀表板" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Works ── -->
   <section class="works" id="works">
     <div class="container">
@@ -173,8 +178,7 @@
 
       <!-- 01 YP Style -->
       <div class="work-item">
-        <div class="work-item-visual wv-1">
-          <span class="wv-label">YP STYLE</span>
+        <div class="work-item-visual wv-1" style="background-image:url(work-yp.jpg);background-size:cover;background-position:center;">
         </div>
         <div class="work-item-body">
           <div class="work-item-head">
@@ -226,15 +230,13 @@
           </div>
           <a href="3zebra-eye.html" class="work-item-link">查看完整案例 →</a>
         </div>
-        <div class="work-item-visual wv-2">
-          <span class="wv-label">3ZEBRA</span>
+        <div class="work-item-visual wv-2" style="background-image:url(work-3zebra.jpg);background-size:cover;background-position:center;">
         </div>
       </div>
 
       <!-- 03 心泰悟居 -->
       <div class="work-item">
-        <div class="work-item-visual wv-3">
-          <span class="wv-label">心泰悟居</span>
+        <div class="work-item-visual wv-3" style="background-image:url(work-xintai.jpg);background-size:cover;background-position:center;">
         </div>
         <div class="work-item-body">
           <div class="work-item-head">
@@ -286,15 +288,13 @@
           </div>
           <a href="doublebox.html" class="work-item-link">查看完整案例 →</a>
         </div>
-        <div class="work-item-visual wv-5">
-          <span class="wv-label">DOUBLE BOX</span>
+        <div class="work-item-visual wv-5" style="background-image:url(work-doublebox.jpg);background-size:cover;background-position:center;">
         </div>
       </div>
 
       <!-- 05 Space Box 太空保鮮碗 -->
       <div class="work-item">
-        <div class="work-item-visual wv-4">
-          <span class="wv-label">SPACE BOX</span>
+        <div class="work-item-visual wv-4" style="background-image:url(未命名-1.jpg);background-size:cover;background-position:center;">
         </div>
         <div class="work-item-body">
           <div class="work-item-head">
@@ -332,8 +332,8 @@
         <h2 class="section-heading reveal">讓每一分預算都清楚可見</h2>
         <p class="body-text reveal">有任何合作想法或問題，歡迎直接聯繫。通常 1–2 個工作日內回覆，全台灣線上合作為主。</p>
         <div class="contact-actions reveal">
-          <a href="mailto:rain850268@gmail.com" class="btn btn-primary">直接寄信</a>
-          <a href="https://www.linkedin.com/in/rain850268/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+          <a href="mailto:rain850268@gmail.com" class="btn btn-primary">寄信聯繫</a>
+          <a href="https://line.me/ti/p/KwawGJJVZO" target="_blank" rel="noopener" class="btn btn-outline">LINE 聯絡</a>
         </div>
         <p class="contact-email reveal">rain850268@gmail.com</p>
       </div>
@@ -350,7 +350,7 @@
           <a href="#services">服務</a>
           <a href="#works">作品</a>
           <a href="mailto:rain850268@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/rain850268/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://line.me/ti/p/KwawGJJVZO" target="_blank" rel="noopener">LINE</a>
         </nav>
       </div>
       <p class="footer-copy">© 2025 呂宜庭 Josephine Lu. All rights reserved.</p>
