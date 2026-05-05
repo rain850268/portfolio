@@ -360,6 +360,7 @@ ul  { list-style: none; }
 .wv-2 { background: linear-gradient(145deg, #D8E4E4 0%, #C0D2D2 100%); }
 .wv-3 { background: linear-gradient(145deg, #E2ECEC 0%, #CADADA 100%); }
 .wv-4 { background: linear-gradient(145deg, #EAF0F0 0%, #D4E0E0 100%); }
+.wv-5 { background: linear-gradient(145deg, #E8EFE0 0%, #D0DFC0 100%); }
 .wv-label {
   font-family: var(--serif);
   font-size: 1.8rem;
