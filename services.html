@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>服務案例 — Josephine Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Services Page Nav ── */
+    .sp-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      height: var(--nav-h);
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .sp-nav {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 3rem;
+      gap: 0;
+    }
+    .sp-back {
+      font-size: .84rem;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      transition: color var(--t);
+      margin-right: 2.5rem;
+      white-space: nowrap;
+    }
+    .sp-back:hover { color: var(--text); }
+    .sp-anchors {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .sp-anchors a {
+      font-size: .84rem;
+      color: var(--text-mid);
+      position: relative;
+      transition: color var(--t);
+    }
+    .sp-anchors a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 1px;
+      background: var(--text);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--t);
+    }
+    .sp-anchors a:hover { color: var(--text); }
+    .sp-anchors a:hover::after { transform: scaleX(1); }
+
+    /* ── Page Layout ── */
+    .sp-main { padding-top: var(--nav-h); }
+
+    .sp-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .sp-section:last-child { border-bottom: none; padding-bottom: 7rem; }
+    .sp-inner {
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+    .sp-heading-block { margin-bottom: 3rem; }
+    .sp-heading-block h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      line-height: 1.2;
+    }
+    .sp-heading-block p {
+      font-size: .94rem;
+      color: var(--text-mid);
+      max-width: 580px;
+      line-height: 1.85;
+    }
+
+    /* ── Video ── */
+    .video-sub-heading {
+      font-size: .88rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      color: var(--text-mid);
+      text-transform: uppercase;
+      padding-bottom: .75rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+    }
+    .video-card {
+      background: var(--surface);
+      border-radius: var(--rl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .video-ratio {
+      position: relative;
+      padding-bottom: 56.25%;
+    }
+    .video-ratio iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-label {
+      padding: .7rem 1rem;
+      font-size: .82rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    /* ── Tabs ── */
+    .tab-group { margin-bottom: 2.5rem; }
+    .tab-bar {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+      gap: 0;
+    }
+    .tab-btn {
+      padding: .65rem 1.4rem;
+      font-family: var(--sans);
+      font-size: .85rem;
+      font-weight: 400;
+      color: var(--text-mid);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      cursor: pointer;
+      transition: color var(--t), border-color var(--t);
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--text); border-bottom-color: var(--text); font-weight: 500; }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── Website Gallery ── */
+    .web-grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+    .web-grid-1 { grid-template-columns: 1fr; max-width: 800px; }
+    .web-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .web-grid-5 { grid-template-columns: repeat(3, 1fr); }
+
+    .web-img-card {
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      overflow: hidden;
+    }
+    .web-img-scroll {
+      max-height: 540px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .web-img-scroll::-webkit-scrollbar { width: 4px; }
+    .web-img-scroll::-webkit-scrollbar-track { background: transparent; }
+    .web-img-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .web-img-card img { width: 100%; display: block; }
+    .web-img-caption {
+      padding: .55rem .9rem;
+      font-size: .78rem;
+      color: var(--text-mid);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Social Gallery ── */
+    .social-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .social-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .social-grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .social-img-card {
+      border-radius: var(--r);
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .social-img-card img { width: 100%; height: auto; display: block; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .sp-nav { padding: 0 1.5rem; }
+      .sp-inner { padding: 0 1.5rem; }
+      .video-grid { grid-template-columns: 1fr; }
+      .web-grid-3, .web-grid-5 { grid-template-columns: 1fr; }
+      .social-grid-3, .social-grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .sp-anchors { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="sp-header">
+    <nav class="sp-nav">
+      <a href="index.html" class="sp-back">← 回作品集</a>
+      <div class="sp-anchors">
+        <a href="#video">短影片企劃剪輯</a>
+        <a href="#website">官網設計</a>
+        <a href="#social">社群企劃</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="sp-main">
+
+    <!-- ════════════════════════════════
+         1  短影片影片企劃剪輯
+    ════════════════════════════════ -->
+    <section class="sp-section" id="video">
+      <div class="sp-inner">
+        <div class="sp-heading-block">
+          <span class="eyebrow">Short-form Video</span>
+          <h2>短影片影片企劃剪輯</h2>
+          <p>從腳本企劃、拍攝、剪輯到後製字卡字幕，依商品特性量身打造高轉換率影片。</p>
+        </div>
+
+        <p class="video-sub-heading">自己企劃腳本 ▸ 拍攝 ▸ 剪輯</p>
+        <div class="video-grid">
+
+          <div class="video-card">
+            <div class="video-ratio">
+              <iframe src="https://www.youtube.com/embed/wCP1bP9jU68" title="Space Box 太空盒｜夜市篇" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="video-label">Space Box 太空盒｜夜市篇</p>
+          </div>
+
+          <div class="video-card">
+            <div class="video-ratio">
+              <iframe src="https://www.youtube.com/embed/4KWKJStvQiE" title="Space Box 太空盒｜社畜篇" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="video-label">Space Box 太空盒｜社畜篇</p>
+          </div>
+
+          <div class="video-card">
+            <div class="video-ratio">
+              <iframe src="https://www.youtube.com/embed/t6yVSCTen0Y" title="MakEat PAN 好好煮食鍋｜媽寶篇" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="video-label">MakEat PAN 好好煮食鍋｜媽寶篇</p>
+          </div>
+
+          <div class="video-card">
+            <div class="video-ratio">
+              <iframe src="https://www.youtube.com/embed/6w-_HSowtqQ" title="SABA 掃地機器人｜開箱介紹" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="video-label">SABA 掃地機器人｜開箱介紹</p>
+          </div>
+
+          <div class="video-card">
+            <div class="video-ratio">
+              <iframe src="https://www.youtube.com/embed/fAmhMhgqKK8" title="Double Box 蒸氣微波保鮮盒｜開箱" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="video-label">Double Box 蒸氣微波保鮮盒｜開箱</p>
+          </div>
+
+          <div class="video-card">
+            <div class="video-ratio">
+              <iframe src="https://www.youtube.com/embed/k-BHewsWHgk" title="Double Box 禮盒組｜沈浸式開箱" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="video-label">Double Box 禮盒組｜沈浸式開箱</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         2  官網設計
+    ════════════════════════════════ -->
+    <section class="sp-section" id="website">
+      <div class="sp-inner">
+        <div class="sp-heading-block">
+          <span class="eyebrow">Website Design</span>
+          <h2>官網設計</h2>
+          <p>協助品牌從零建置電商官網，涵蓋 Banner、分類架構、會員機制與 CRM 串接，使用 Waca、Cyberbiz、Shopify 等平台。</p>
+        </div>
+
+        <div class="tab-group" data-tabs>
+          <div class="tab-bar">
+            <button class="tab-btn active" data-target="web-fu">FU 品牌</button>
+            <button class="tab-btn" data-target="web-liferich">LiFE RiCH</button>
+            <button class="tab-btn" data-target="web-hongsan">紅杉食品</button>
+          </div>
+
+          <!-- FU 品牌 -->
+          <div id="web-fu" class="tab-panel active">
+            <div class="web-grid web-grid-1">
+              <div class="web-img-card">
+                <div class="web-img-scroll">
+                  <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/940808_264676.jpeg" alt="FU 品牌官網" loading="lazy">
+                </div>
+                <p class="web-img-caption">品牌定位、產品企劃，由設計師執行視覺呈現</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- LiFE RiCH -->
+          <div id="web-liferich" class="tab-panel">
+            <div class="web-grid web-grid-3">
+              <div class="web-img-card">
+                <div class="web-img-scroll">
+                  <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/883838_250806.jpeg" alt="Double Box 系列產品分類頁" loading="lazy">
+                </div>
+                <p class="web-img-caption">Double Box 系列產品分類頁</p>
+              </div>
+              <div class="web-img-card">
+                <div class="web-img-scroll">
+                  <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/972385_435963.jpeg" alt="Space Box 系列產品分類頁" loading="lazy">
+                </div>
+                <p class="web-img-caption">Space Box 系列產品分類頁</p>
+              </div>
+              <div class="web-img-card">
+                <div class="web-img-scroll">
+                  <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/102279_735883.jpeg" alt="自組 Double Box 產品概念頁" loading="lazy">
+                </div>
+                <p class="web-img-caption">自組 Double Box 產品概念頁</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 紅杉食品 -->
+          <div id="web-hongsan" class="tab-panel">
+            <div class="web-grid web-grid-3">
+              <div class="web-img-card">
+                <div class="web-img-scroll">
+                  <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/890915_957348.jpeg" alt="品牌首頁" loading="lazy">
+                </div>
+                <p class="web-img-caption">品牌首頁</p>
+              </div>
+              <div class="web-img-card">
+                <div class="web-img-scroll">
+                  <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/104901_745652.jpeg" alt="團購批發頁" loading="lazy">
+                </div>
+                <p class="web-img-caption">團購批發頁</p>
+              </div>
+              <div class="web-img-card">
+                <div class="web-img-scroll">
+                  <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/20071_250966.jpeg" alt="會員頁面" loading="lazy">
+                </div>
+                <p class="web-img-caption">會員頁面</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         3  社群企劃
+    ════════════════════════════════ -->
+    <section class="sp-section" id="social">
+      <div class="sp-inner">
+        <div class="sp-heading-block">
+          <span class="eyebrow">Social Media</span>
+          <h2>社群企劃</h2>
+          <p>LINE、Instagram 貼文內容企劃與視覺設計，從品牌策略到排程發文全程統籌。</p>
+        </div>
+
+        <div class="tab-group" data-tabs>
+          <div class="tab-bar">
+            <button class="tab-btn active" data-target="soc-hongsan">紅杉宅料理</button>
+            <button class="tab-btn" data-target="soc-4friends">4Friends</button>
+            <button class="tab-btn" data-target="soc-xintai">心泰悟居</button>
+          </div>
+
+          <!-- 紅杉宅料理 -->
+          <div id="soc-hongsan" class="tab-panel active">
+            <div class="social-grid social-grid-3">
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/486977_922990.png" alt="" loading="lazy">
+              </div>
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/818623_278324.png" alt="" loading="lazy">
+              </div>
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/971859_73159.png" alt="" loading="lazy">
+              </div>
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/332448_332537.png" alt="" loading="lazy">
+              </div>
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/536805_327621.png" alt="" loading="lazy">
+              </div>
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/656448_242117.png" alt="" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- 4Friends -->
+          <div id="soc-4friends" class="tab-panel">
+            <div class="social-grid social-grid-4">
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/27017_855689.jpeg" alt="" loading="lazy">
+              </div>
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/163055_227735.jpeg" alt="" loading="lazy">
+              </div>
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/912160_302512.jpeg" alt="" loading="lazy">
+              </div>
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/618620_953310.jpeg" alt="" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- 心泰悟居 -->
+          <div id="soc-xintai" class="tab-panel">
+            <div class="social-grid social-grid-3">
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/131866_631317.png" alt="" loading="lazy">
+              </div>
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/385295_772004.png" alt="" loading="lazy">
+              </div>
+              <div class="social-img-card">
+                <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/455333_951076.png" alt="" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    document.querySelectorAll('[data-tabs]').forEach(group => {
+      group.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          group.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+          group.querySelector('#' + btn.dataset.target).classList.add('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
