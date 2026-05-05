@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>行銷企劃案例 — Josephine Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Page Nav ── */
+    .mp-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      height: var(--nav-h);
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .mp-nav {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+    .mp-back {
+      font-size: .84rem;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      transition: color var(--t);
+      margin-right: 2.5rem;
+    }
+    .mp-back:hover { color: var(--text); }
+    .mp-anchors {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .mp-anchors a {
+      font-size: .84rem;
+      color: var(--text-mid);
+      position: relative;
+      transition: color var(--t);
+    }
+    .mp-anchors a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 1px;
+      background: var(--text);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--t);
+    }
+    .mp-anchors a:hover { color: var(--text); }
+    .mp-anchors a:hover::after { transform: scaleX(1); }
+
+    .mp-main { padding-top: var(--nav-h); }
+    .mp-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .mp-section:last-child { border-bottom: none; padding-bottom: 7rem; }
+    .mp-inner {
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+    .mp-heading-block { margin-bottom: 3rem; }
+    .mp-heading-block h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      line-height: 1.2;
+    }
+    .mp-heading-block p {
+      font-size: .94rem;
+      color: var(--text-mid);
+      max-width: 600px;
+      line-height: 1.85;
+    }
+
+    /* ══════════════════════════
+       Process Flow
+    ══════════════════════════ */
+    .process-group { margin-bottom: 3.5rem; }
+    .process-group-label {
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .process-group-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .process-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      overflow: hidden;
+    }
+    .process-step {
+      padding: 1.75rem 1.5rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .process-step:last-child { border-right: none; }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--hl);
+      line-height: 1;
+      margin-bottom: .6rem;
+      letter-spacing: -.02em;
+    }
+    .step-title {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .step-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+    }
+    .step-tag {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: .18rem .6rem;
+      font-size: .75rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      white-space: nowrap;
+    }
+
+    /* Arrow connector between steps */
+    .process-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -10px;
+      top: 1.9rem;
+      font-size: .75rem;
+      color: var(--text-light);
+      background: var(--bg);
+      padding: 0 2px;
+      z-index: 1;
+    }
+
+    /* ══════════════════════════
+       Case Cards
+    ══════════════════════════ */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+    .case-card {
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      transition: box-shadow var(--t), transform var(--t);
+      text-decoration: none;
+      color: inherit;
+    }
+    .case-card:hover {
+      box-shadow: var(--shh);
+      transform: translateY(-3px);
+    }
+    .case-card-num {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      color: var(--text-light);
+    }
+    .case-card-cat {
+      font-size: .75rem;
+      color: var(--text-mid);
+      margin-top: -.4rem;
+    }
+    .case-card-title {
+      font-size: .9rem;
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--text);
+    }
+    .case-card-metric {
+      margin-top: auto;
+      padding-top: .75rem;
+      border-top: 1px solid var(--border);
+    }
+    .case-metric-val {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.1;
+      font-family: var(--serif);
+    }
+    .case-metric-label {
+      font-size: .72rem;
+      color: var(--text-mid);
+      margin-top: .15rem;
+    }
+    .case-card-link {
+      font-size: .78rem;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      transition: color var(--t);
+    }
+    .case-card:hover .case-card-link { color: var(--text); }
+
+    /* ══════════════════════════
+       Dashboard Section
+    ══════════════════════════ */
+    .dashboard-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .dashboard-text h3 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .dashboard-text p {
+      font-size: .92rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 1.25rem;
+    }
+    .dashboard-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-top: 1.5rem;
+    }
+    .db-feature {
+      padding: .9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      background: var(--surface);
+    }
+    .db-feature-title {
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: .25rem;
+    }
+    .db-feature-desc {
+      font-size: .76rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .dashboard-image-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      overflow: hidden;
+      box-shadow: var(--sh);
+    }
+    .dashboard-image-wrap img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .cases-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+      .mp-nav { padding: 0 1.5rem; }
+      .mp-inner { padding: 0 1.5rem; }
+      .mp-anchors { display: none; }
+      .process-flow { grid-template-columns: 1fr 1fr; }
+      .process-step:nth-child(2) { border-right: none; }
+      .process-step:nth-child(2)::after { display: none; }
+      .dashboard-layout { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 600px) {
+      .process-flow { grid-template-columns: 1fr; }
+      .process-step { border-right: none; border-bottom: 1px solid var(--border); }
+      .process-step:last-child { border-bottom: none; }
+      .process-step::after { display: none; }
+      .cases-grid { grid-template-columns: 1fr 1fr; }
+      .dashboard-features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="mp-header">
+    <nav class="mp-nav">
+      <a href="index.html" class="mp-back">← 回作品集</a>
+      <div class="mp-anchors">
+        <a href="#process">企劃流程</a>
+        <a href="#cases">精選案例</a>
+        <a href="#dashboard">視覺化報表</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mp-main">
+
+    <!-- ════════════════════════════════
+         1  企劃流程視覺化
+    ════════════════════════════════ -->
+    <section class="mp-section" id="process">
+      <div class="mp-inner">
+        <div class="mp-heading-block">
+          <span class="eyebrow">Planning Framework</span>
+          <h2>行銷企劃 · 品牌策略</h2>
+          <p>從市調定位到上線推廣，每個環節都有完整的框架與執行 SOP，確保策略落地、目標可達。</p>
+        </div>
+
+        <!-- 商品企劃 -->
+        <div class="process-group">
+          <p class="process-group-label">商品企劃項目</p>
+          <div class="process-flow">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div class="step-title">產品定位階段</div>
+              <div class="step-tags">
+                <span class="step-tag">競品市調</span>
+                <span class="step-tag">Persona</span>
+                <span class="step-tag">產品定位</span>
+                <span class="step-tag">顧客價值</span>
+                <span class="step-tag">產品命名</span>
+                <span class="step-tag">Slogan</span>
+                <span class="step-tag">Hashtag</span>
+                <span class="step-tag">時程規劃</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div class="step-title">架構設計・視覺企劃</div>
+              <div class="step-tags">
+                <span class="step-tag">產品頁面架構</span>
+                <span class="step-tag">頁面參考視覺</span>
+                <span class="step-tag">拍攝企劃簡報</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div class="step-title">銷售策略</div>
+              <div class="step-tags">
+                <span class="step-tag">定價規劃</span>
+                <span class="step-tag">組合策略</span>
+                <span class="step-tag">優惠方案</span>
+                <span class="step-tag">贈品設計</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <div class="step-title">社群推廣</div>
+              <div class="step-tags">
+                <span class="step-tag">社群推廣企劃</span>
+                <span class="step-tag">社群文案撰稿</span>
+                <span class="step-tag">FB 推播</span>
+                <span class="step-tag">SMS</span>
+                <span class="step-tag">EDM</span>
+                <span class="step-tag">LINE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 活動企劃 -->
+        <div class="process-group">
+          <p class="process-group-label">活動企劃項目</p>
+          <div class="process-flow">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div class="step-title">活動主題設定</div>
+              <div class="step-tags">
+                <span class="step-tag">視覺概念</span>
+                <span class="step-tag">主題命名</span>
+                <span class="step-tag">視覺企劃</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div class="step-title">架構設計・視覺企劃</div>
+              <div class="step-tags">
+                <span class="step-tag">頁面架構</span>
+                <span class="step-tag">參考視覺</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div class="step-title">銷售策略</div>
+              <div class="step-tags">
+                <span class="step-tag">定價規劃</span>
+                <span class="step-tag">組合策略</span>
+                <span class="step-tag">優惠方案</span>
+                <span class="step-tag">贈品設計</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <div class="step-title">社群推廣</div>
+              <div class="step-tags">
+                <span class="step-tag">社群推廣企劃</span>
+                <span class="step-tag">社群文案撰稿</span>
+                <span class="step-tag">EDM</span>
+                <span class="step-tag">LINE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         2  精選案例
+    ════════════════════════════════ -->
+    <section class="mp-section" id="cases">
+      <div class="mp-inner">
+        <div class="mp-heading-block">
+          <span class="eyebrow">Portfolio</span>
+          <h2>精選案例</h2>
+          <p>每個案子都有完整的策略思維與可量化的成果。</p>
+        </div>
+
+        <div class="cases-grid">
+
+          <a href="yp-style.html" class="case-card">
+            <div>
+              <div class="case-card-num">01</div>
+              <div class="case-card-cat">Meta 廣告 · 服飾電商</div>
+            </div>
+            <div class="case-card-title">YP Style｜Meta 廣告投放與品牌營運全案優化</div>
+            <div class="case-card-metric">
+              <div class="case-metric-val">+669%</div>
+              <div class="case-metric-label">廣告月營收成長</div>
+            </div>
+            <span class="case-card-link">查看完整案例 →</span>
+          </a>
+
+          <a href="3zebra-eye.html" class="case-card">
+            <div>
+              <div class="case-card-num">02</div>
+              <div class="case-card-cat">募資企劃 · 健康品牌</div>
+            </div>
+            <div class="case-card-title">3ZeBra 雙層氣壓眼罩｜嘖嘖募資全案操盤</div>
+            <div class="case-card-metric">
+              <div class="case-metric-val">677 萬</div>
+              <div class="case-metric-label">嘖嘖集資總額</div>
+            </div>
+            <span class="case-card-link">查看完整案例 →</span>
+          </a>
+
+          <a href="xintai.html" class="case-card">
+            <div>
+              <div class="case-card-num">03</div>
+              <div class="case-card-cat">Meta 廣告 · 命理品牌</div>
+            </div>
+            <div class="case-card-title">心泰悟居｜品牌廣告與社群內容重塑</div>
+            <div class="case-card-metric">
+              <div class="case-metric-val">-64.7%</div>
+              <div class="case-metric-label">訊息獲客成本下降</div>
+            </div>
+            <span class="case-card-link">查看完整案例 →</span>
+          </a>
+
+          <a href="doublebox.html" class="case-card">
+            <div>
+              <div class="case-card-num">04</div>
+              <div class="case-card-cat">行銷企劃 · 生活電商</div>
+            </div>
+            <div class="case-card-title">LiFE RiCH × Double Box 211 好食組行銷企劃</div>
+            <div class="case-card-metric">
+              <div class="case-metric-val">419 萬</div>
+              <div class="case-metric-label">10 天活動總業績</div>
+            </div>
+            <span class="case-card-link">查看完整案例 →</span>
+          </a>
+
+          <a href="spacebox.html" class="case-card">
+            <div>
+              <div class="case-card-num">05</div>
+              <div class="case-card-cat">新品銷售 · 生活電商</div>
+            </div>
+            <div class="case-card-title">LiFE RiCH × Space Box 太空保鮮碗新品上市</div>
+            <div class="case-card-metric">
+              <div class="case-metric-val">163%</div>
+              <div class="case-metric-label">目標達成率</div>
+            </div>
+            <span class="case-card-link">查看完整案例 →</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         3  視覺化報表
+    ════════════════════════════════ -->
+    <section class="mp-section" id="dashboard">
+      <div class="mp-inner">
+        <div class="mp-heading-block">
+          <span class="eyebrow">Data Dashboard</span>
+          <h2>視覺化報表</h2>
+          <p>以自動化儀表板追蹤每月成效，讓客戶隨時掌握行銷數據，不再等月報才看數字。</p>
+        </div>
+
+        <div class="dashboard-layout">
+          <div class="dashboard-text">
+            <h3>讓數據說話，讓決策更快</h3>
+            <p>針對長期合作客戶，提供客製化的即時成效儀表板。整合 LINE、EDM、自動化行銷腳本等多渠道數據，以視覺化方式呈現 ROAS、回購率、觸及成本等核心指標，讓每一筆預算的流向都清晰可追溯。</p>
+            <div class="dashboard-features">
+              <div class="db-feature">
+                <div class="db-feature-title">多渠道整合</div>
+                <div class="db-feature-desc">LINE / EDM / 自動化行銷腳本，一頁綜觀</div>
+              </div>
+              <div class="db-feature">
+                <div class="db-feature-title">核心 KPI 追蹤</div>
+                <div class="db-feature-desc">ROAS、回購率、觸及成本，月度趨勢一目瞭然</div>
+              </div>
+              <div class="db-feature">
+                <div class="db-feature-title">自動化腳本績效</div>
+                <div class="db-feature-desc">新客流程、購物車回收、會員喚回，累積成效完整呈現</div>
+              </div>
+              <div class="db-feature">
+                <div class="db-feature-title">行銷排程紀錄</div>
+                <div class="db-feature-desc">每次推播主題、名單數、開信率一覽，方便覆盤優化</div>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-image-wrap">
+            <img src="dashboard-preview.png" alt="視覺化報表 — 再行銷戰情室" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
