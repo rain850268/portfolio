@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta 廣告投放案例 — Josephine Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .mp-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      height: var(--nav-h);
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .mp-nav {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+    .mp-back {
+      font-size: .84rem;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      transition: color var(--t);
+      margin-right: 2.5rem;
+    }
+    .mp-back:hover { color: var(--text); }
+    .mp-anchors {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .mp-anchors a {
+      font-size: .84rem;
+      color: var(--text-mid);
+      position: relative;
+      transition: color var(--t);
+    }
+    .mp-anchors a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 1px;
+      background: var(--text);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--t);
+    }
+    .mp-anchors a:hover { color: var(--text); }
+    .mp-anchors a:hover::after { transform: scaleX(1); }
+
+    .mp-main { padding-top: var(--nav-h); }
+    .mp-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .mp-section:last-child { border-bottom: none; padding-bottom: 7rem; }
+    .mp-inner {
+      max-width: var(--w);
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+    .mp-heading-block { margin-bottom: 3rem; }
+    .mp-heading-block h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 300;
+      margin-bottom: .6rem;
+      line-height: 1.2;
+    }
+    .mp-heading-block p {
+      font-size: .94rem;
+      color: var(--text-mid);
+      max-width: 600px;
+      line-height: 1.85;
+    }
+
+    /* ── Process Flow ── */
+    .process-group { margin-bottom: 3.5rem; }
+    .process-group-label {
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .process-group-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .process-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      overflow: hidden;
+    }
+    .process-step {
+      padding: 1.75rem 1.5rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .process-step:last-child { border-right: none; }
+    .step-num {
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--hl);
+      line-height: 1;
+      margin-bottom: .6rem;
+      letter-spacing: -.02em;
+    }
+    .step-title {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .step-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+    }
+    .step-tag {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: .18rem .6rem;
+      font-size: .75rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      white-space: nowrap;
+    }
+    .process-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -10px;
+      top: 1.9rem;
+      font-size: .75rem;
+      color: var(--text-light);
+      background: var(--bg);
+      padding: 0 2px;
+      z-index: 1;
+    }
+
+    /* ── Case Cards ── */
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .case-card {
+      border: 1px solid var(--border);
+      border-radius: var(--rl);
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      transition: box-shadow var(--t), transform var(--t);
+      text-decoration: none;
+      color: inherit;
+    }
+    .case-card:hover {
+      box-shadow: var(--shh);
+      transform: translateY(-3px);
+    }
+    .case-card-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--surface);
+      border: 1.5px dashed var(--border);
+      border-radius: var(--r);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .72rem;
+      color: var(--text-light);
+      letter-spacing: .05em;
+    }
+    .case-card-num {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      color: var(--text-light);
+    }
+    .case-card-cat {
+      font-size: .75rem;
+      color: var(--text-mid);
+      margin-top: -.4rem;
+    }
+    .case-card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.45;
+      color: var(--text);
+    }
+    .case-card-desc {
+      font-size: .84rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+    .case-card-metrics {
+      display: flex;
+      gap: 1.5rem;
+      padding-top: .75rem;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+    .case-metric-val {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.1;
+      font-family: var(--serif);
+    }
+    .case-metric-label {
+      font-size: .72rem;
+      color: var(--text-mid);
+      margin-top: .15rem;
+    }
+    .case-card-link {
+      font-size: .78rem;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      transition: color var(--t);
+    }
+    .case-card:hover .case-card-link { color: var(--text); }
+
+    @media (max-width: 900px) {
+      .mp-nav { padding: 0 1.5rem; }
+      .mp-inner { padding: 0 1.5rem; }
+      .mp-anchors { display: none; }
+      .process-flow { grid-template-columns: 1fr 1fr; }
+      .process-step:nth-child(2) { border-right: none; }
+      .process-step:nth-child(2)::after { display: none; }
+    }
+    @media (max-width: 600px) {
+      .process-flow { grid-template-columns: 1fr; }
+      .process-step { border-right: none; border-bottom: 1px solid var(--border); }
+      .process-step:last-child { border-bottom: none; }
+      .process-step::after { display: none; }
+      .cases-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="mp-header">
+    <nav class="mp-nav">
+      <a href="index.html" class="mp-back">← 回作品集</a>
+      <div class="mp-anchors">
+        <a href="#process">操作框架</a>
+        <a href="#cases">精選案例</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mp-main">
+
+    <!-- ════════════════════════════════
+         1  操作框架
+    ════════════════════════════════ -->
+    <section class="mp-section" id="process">
+      <div class="mp-inner">
+        <div class="mp-heading-block">
+          <span class="eyebrow">Meta Ads</span>
+          <h2>Meta 廣告投放</h2>
+          <p>透明化數據流程，從帳戶架構建立到每月覆盤，讓每一分預算的流向都清晰可追溯。</p>
+        </div>
+
+        <div class="process-group">
+          <p class="process-group-label">廣告操作框架</p>
+          <div class="process-flow">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div class="step-title">受眾架構建立</div>
+              <div class="step-tags">
+                <span class="step-tag">帳戶層級規劃</span>
+                <span class="step-tag">冷 / 暖 / 熱分層</span>
+                <span class="step-tag">Lookalike 受眾</span>
+                <span class="step-tag">再行銷設定</span>
+                <span class="step-tag">Meta Pixel 安裝</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div class="step-title">素材測試</div>
+              <div class="step-tags">
+                <span class="step-tag">多版本文案</span>
+                <span class="step-tag">圖文 / 影片對比</span>
+                <span class="step-tag">A/B 測試設計</span>
+                <span class="step-tag">素材方向確認</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div class="step-title">成效追蹤</div>
+              <div class="step-tags">
+                <span class="step-tag">每週文字回報</span>
+                <span class="step-tag">ROAS 監控</span>
+                <span class="step-tag">CPC / CPM 分析</span>
+                <span class="step-tag">轉換路徑追蹤</span>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <div class="step-title">優化覆盤</div>
+              <div class="step-tags">
+                <span class="step-tag">每月簡報覆盤</span>
+                <span class="step-tag">預算分配調整</span>
+                <span class="step-tag">受眾更新</span>
+                <span class="step-tag">季度策略優化</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+         2  精選案例
+    ════════════════════════════════ -->
+    <section class="mp-section" id="cases">
+      <div class="mp-inner">
+        <div class="mp-heading-block">
+          <span class="eyebrow">Portfolio</span>
+          <h2>精選案例</h2>
+          <p>每個案子都有完整的策略思維與可量化的成果。</p>
+        </div>
+
+        <div class="cases-grid">
+
+          <a href="yp-style.html" class="case-card">
+            <div class="case-card-thumb">圖片</div>
+            <div>
+              <div class="case-card-num">01</div>
+              <div class="case-card-cat">Meta 廣告 · 服飾電商</div>
+            </div>
+            <div class="case-card-title">YP Style｜Meta 廣告投放與品牌營運全案優化</div>
+            <p class="case-card-desc">從近乎無系統化投廣狀態出發，建立完整廣告漏斗架構，整合商品季節策略、官網轉換優化與每月數據化覆盤，全面推動品牌營收成長。</p>
+            <div class="case-card-metrics">
+              <div>
+                <div class="case-metric-val">7.36</div>
+                <div class="case-metric-label">最高 ROAS</div>
+              </div>
+              <div>
+                <div class="case-metric-val">+669%</div>
+                <div class="case-metric-label">廣告月營收成長</div>
+              </div>
+              <div>
+                <div class="case-metric-val">+277%</div>
+                <div class="case-metric-label">ROAS 成長幅度</div>
+              </div>
+            </div>
+            <span class="case-card-link">查看完整案例 →</span>
+          </a>
+
+          <a href="xintai.html" class="case-card">
+            <div class="case-card-thumb">圖片</div>
+            <div>
+              <div class="case-card-num">02</div>
+              <div class="case-card-cat">Meta 廣告 · 命理品牌</div>
+            </div>
+            <div class="case-card-title">心泰悟居｜命理諮詢品牌 Meta 廣告 × 社群內容重塑</div>
+            <p class="case-card-desc">從零建立品牌廣告投放模型，同步全面重塑 IG 社群內容與視覺，讓帳號從單純曝光頁面轉型為具轉換力的品牌資產，私訊獲客成本大幅下降。</p>
+            <div class="case-card-metrics">
+              <div>
+                <div class="case-metric-val">-64.7%</div>
+                <div class="case-metric-label">訊息成本下降</div>
+              </div>
+              <div>
+                <div class="case-metric-val">-74.6%</div>
+                <div class="case-metric-label">新訊息成本下降</div>
+              </div>
+              <div>
+                <div class="case-metric-val">1,000+</div>
+                <div class="case-metric-label">穩定粉絲規模</div>
+              </div>
+            </div>
+            <span class="case-card-link">查看完整案例 →</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
