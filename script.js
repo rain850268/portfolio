@@ -63,6 +63,33 @@ if (caseTabs.length) {
   });
 }
 
+/* ── Language Toggle ── */
+(function () {
+  const LANG_KEY = 'pf-lang';
+  const btn = document.getElementById('langToggle');
+
+  function applyLang(lang) {
+    const isEn = lang === 'en';
+    document.documentElement.lang = isEn ? 'en' : 'zh-Hant';
+    document.querySelectorAll('[data-en]').forEach(el => {
+      if (!el.dataset.zh) el.dataset.zh = el.innerHTML;
+      el.innerHTML = isEn ? el.dataset.en : el.dataset.zh;
+    });
+    if (btn) btn.textContent = isEn ? '中文' : 'EN';
+    localStorage.setItem(LANG_KEY, lang);
+  }
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const cur = localStorage.getItem(LANG_KEY) || 'zh';
+      applyLang(cur === 'zh' ? 'en' : 'zh');
+    });
+  }
+
+  const saved = localStorage.getItem(LANG_KEY);
+  if (saved === 'en') applyLang('en');
+})();
+
 /* ── Contact form → mailto ── */
 const contactForm = document.getElementById('contactForm');
 if (contactForm) contactForm.addEventListener('submit', e => {
