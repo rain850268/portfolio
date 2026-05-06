@@ -6,7 +6,7 @@
   <title>服務案例 — Josephine Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap">
   <link rel="stylesheet" href="style.css">
   <style>
     /* ── Services Page Nav ── */
@@ -307,13 +307,14 @@
 
   <header class="sp-header">
     <nav class="sp-nav">
-      <a href="index.html" class="sp-back">← 回作品集</a>
+      <a href="index.html" class="sp-back" data-en="← Back to Portfolio">← 回作品集</a>
       <div class="sp-anchors">
-        <a href="#video">短影片企劃＆剪輯</a>
-        <a href="#website">官網設計</a>
-        <a href="#lp">Landing Page 商品頁企劃</a>
-        <a href="#social">社群企劃</a>
+        <a href="#video" data-en="Short-form Video">短影片企劃＆剪輯</a>
+        <a href="#website" data-en="Website">官網設計</a>
+        <a href="#lp" data-en="Landing Page">Landing Page 商品頁企劃</a>
+        <a href="#social" data-en="Social Media">社群企劃</a>
       </div>
+      <button class="lang-toggle" id="langToggle" style="margin-left:auto">EN</button>
     </nav>
   </header>
 
@@ -326,53 +327,53 @@
       <div class="sp-inner">
         <div class="sp-heading-block">
           <span class="eyebrow">Short-form Video</span>
-          <h2>短影片企劃＆剪輯</h2>
-          <p>從腳本企劃、拍攝、剪輯到後製字卡字幕，依商品特性量身打造高轉換率影片。</p>
+          <h2 data-en="Short-form Video Planning &amp; Editing">短影片企劃＆剪輯</h2>
+          <p data-en="From scripting and filming to editing and subtitles — high-converting videos crafted around each product's unique qualities.">從腳本企劃、拍攝、剪輯到後製字卡字幕，依商品特性量身打造高轉換率影片。</p>
         </div>
 
-        <p class="video-sub-heading">自己企劃腳本 ▸ 拍攝 ▸ 剪輯</p>
+        <p class="video-sub-heading" data-en="Script ▸ Shoot ▸ Edit">自己企劃腳本 ▸ 拍攝 ▸ 剪輯</p>
         <div class="video-grid">
 
           <div class="video-card">
             <div class="video-ratio">
               <iframe src="https://www.youtube.com/embed/wCP1bP9jU68" title="Space Box 太空盒｜夜市篇" allowfullscreen loading="lazy"></iframe>
             </div>
-            <p class="video-label">Space Box 太空盒｜夜市篇</p>
+            <p class="video-label" data-en="Space Box｜Night Market Sketch">Space Box 太空盒｜夜市篇</p>
           </div>
 
           <div class="video-card">
             <div class="video-ratio">
               <iframe src="https://www.youtube.com/embed/4KWKJStvQiE" title="Space Box 太空盒｜社畜篇" allowfullscreen loading="lazy"></iframe>
             </div>
-            <p class="video-label">Space Box 太空盒｜社畜篇</p>
+            <p class="video-label" data-en="Space Box｜Office Worker Sketch">Space Box 太空盒｜社畜篇</p>
           </div>
 
           <div class="video-card">
             <div class="video-ratio">
               <iframe src="https://www.youtube.com/embed/t6yVSCTen0Y" title="MakEat PAN 好好煮食鍋｜媽寶篇" allowfullscreen loading="lazy"></iframe>
             </div>
-            <p class="video-label">MakEat PAN 好好煮食鍋｜媽寶篇</p>
+            <p class="video-label" data-en="MakEat PAN｜Mama's Boy Sketch">MakEat PAN 好好煮食鍋｜媽寶篇</p>
           </div>
 
           <div class="video-card">
             <div class="video-ratio">
               <iframe src="https://www.youtube.com/embed/6w-_HSowtqQ" title="SABA 掃地機器人｜開箱介紹" allowfullscreen loading="lazy"></iframe>
             </div>
-            <p class="video-label">SABA 掃地機器人｜開箱介紹</p>
+            <p class="video-label" data-en="SABA Robot Vacuum｜Unboxing">SABA 掃地機器人｜開箱介紹</p>
           </div>
 
           <div class="video-card">
             <div class="video-ratio">
               <iframe src="https://www.youtube.com/embed/fAmhMhgqKK8" title="Double Box 蒸氣微波保鮮盒｜開箱" allowfullscreen loading="lazy"></iframe>
             </div>
-            <p class="video-label">Double Box 蒸氣微波保鮮盒｜開箱</p>
+            <p class="video-label" data-en="Double Box Steam Container｜Unboxing">Double Box 蒸氣微波保鮮盒｜開箱</p>
           </div>
 
           <div class="video-card">
             <div class="video-ratio">
               <iframe src="https://www.youtube.com/embed/k-BHewsWHgk" title="Double Box 禮盒組｜沈浸式開箱" allowfullscreen loading="lazy"></iframe>
             </div>
-            <p class="video-label">Double Box 禮盒組｜沈浸式開箱</p>
+            <p class="video-label" data-en="Double Box Gift Set｜Immersive Unboxing">Double Box 禮盒組｜沈浸式開箱</p>
           </div>
 
         </div>
@@ -386,16 +387,16 @@
       <div class="sp-inner">
         <div class="sp-heading-block">
           <span class="eyebrow">Website Design</span>
-          <h2>官網設計</h2>
-          <p>協助品牌從零建置電商官網，涵蓋 Banner、分類架構、會員機制與 CRM 串接，使用 Waca、Cyberbiz、Shopify、Shopline、Pinkoi、蝦皮等平台。</p>
-          <span class="design-note">※ 平面設計另外跟設計師合作</span>
+          <h2 data-en="Website Design">官網設計</h2>
+          <p data-en="Full e-commerce site setup from scratch — banners, category structures, membership systems, and CRM integrations. Platforms: Waca, Cyberbiz, Shopify, Shopline, Pinkoi, Shopee.">協助品牌從零建置電商官網，涵蓋 Banner、分類架構、會員機制與 CRM 串接，使用 Waca、Cyberbiz、Shopify、Shopline、Pinkoi、蝦皮等平台。</p>
+          <span class="design-note" data-en="※ Visual design in collaboration with a dedicated designer">※ 平面設計另外跟設計師合作</span>
         </div>
 
         <div class="tab-group" data-tabs>
           <div class="tab-bar">
-            <button class="tab-btn active" data-target="web-fu">FU 品牌</button>
+            <button class="tab-btn active" data-target="web-fu" data-en="FU Brand">FU 品牌</button>
             <button class="tab-btn" data-target="web-liferich">LiFE RiCH</button>
-            <button class="tab-btn" data-target="web-hongsan">紅杉食品</button>
+            <button class="tab-btn" data-target="web-hongsan" data-en="Hongsan Food">紅杉食品</button>
           </div>
 
           <!-- FU 品牌 -->
@@ -405,7 +406,7 @@
                 <div class="web-img-scroll">
                   <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/940808_264676.jpeg" alt="FU 品牌官網" loading="lazy">
                 </div>
-                <p class="web-img-caption">品牌定位、產品企劃，由設計師執行視覺呈現</p>
+                <p class="web-img-caption" data-en="Brand positioning &amp; product planning; visual execution by designer">品牌定位、產品企劃，由設計師執行視覺呈現</p>
               </div>
             </div>
           </div>
@@ -417,19 +418,19 @@
                 <div class="web-img-scroll">
                   <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/883838_250806.jpeg" alt="Double Box 系列產品分類頁" loading="lazy">
                 </div>
-                <p class="web-img-caption">Double Box 系列產品分類頁</p>
+                <p class="web-img-caption" data-en="Double Box product category page">Double Box 系列產品分類頁</p>
               </div>
               <div class="web-img-card">
                 <div class="web-img-scroll">
                   <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/972385_435963.jpeg" alt="Space Box 系列產品分類頁" loading="lazy">
                 </div>
-                <p class="web-img-caption">Space Box 系列產品分類頁</p>
+                <p class="web-img-caption" data-en="Space Box product category page">Space Box 系列產品分類頁</p>
               </div>
               <div class="web-img-card">
                 <div class="web-img-scroll">
                   <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/102279_735883.jpeg" alt="自組 Double Box 產品概念頁" loading="lazy">
                 </div>
-                <p class="web-img-caption">自組 Double Box 產品概念頁</p>
+                <p class="web-img-caption" data-en="Custom Double Box concept page">自組 Double Box 產品概念頁</p>
               </div>
             </div>
           </div>
@@ -441,19 +442,19 @@
                 <div class="web-img-scroll">
                   <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/890915_957348.jpeg" alt="品牌首頁" loading="lazy">
                 </div>
-                <p class="web-img-caption">品牌首頁</p>
+                <p class="web-img-caption" data-en="Brand Homepage">品牌首頁</p>
               </div>
               <div class="web-img-card">
                 <div class="web-img-scroll">
                   <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/104901_745652.jpeg" alt="團購批發頁" loading="lazy">
                 </div>
-                <p class="web-img-caption">團購批發頁</p>
+                <p class="web-img-caption" data-en="Wholesale Page">團購批發頁</p>
               </div>
               <div class="web-img-card">
                 <div class="web-img-scroll">
                   <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_9000,w_1200,f_auto,q_auto/17974484/20071_250966.jpeg" alt="會員頁面" loading="lazy">
                 </div>
-                <p class="web-img-caption">會員頁面</p>
+                <p class="web-img-caption" data-en="Member Area">會員頁面</p>
               </div>
             </div>
           </div>
@@ -469,13 +470,13 @@
       <div class="sp-inner">
         <div class="sp-heading-block">
           <span class="eyebrow">Landing Page</span>
-          <h2>Landing Page 商品頁企劃</h2>
-          <p>從商品特性出發規劃銷售頁架構，包含賣點排序、視覺框架、文案方向，提供完整頁面企劃文件，並與設計師協作完成最終頁面。</p>
-          <span class="design-note">※ 平面設計另外跟設計師合作</span>
+          <h2 data-en="Landing Page Planning">Landing Page 商品頁企劃</h2>
+          <p data-en="Sales page architecture built around each product — selling point order, visual framework, copy direction. Full planning docs provided and executed in collaboration with a designer.">從商品特性出發規劃銷售頁架構，包含賣點排序、視覺框架、文案方向，提供完整頁面企劃文件，並與設計師協作完成最終頁面。</p>
+          <span class="design-note" data-en="※ Visual design in collaboration with a dedicated designer">※ 平面設計另外跟設計師合作</span>
         </div>
 
         <div class="lp-slider-header">
-          <div style="font-size:.82rem;color:var(--text-light);">滑動查看企劃 → 成品</div>
+          <div style="font-size:.82rem;color:var(--text-light);" data-en="Slide to see Plan → Result">滑動查看企劃 → 成品</div>
           <div class="lp-slider-arrows">
             <button class="lp-arrow" id="lpPrev">←</button>
             <button class="lp-arrow" id="lpNext">→</button>
@@ -491,11 +492,11 @@
                 <div class="lp-card-top">
                   <div class="lp-card-info">
                     <div class="lp-card-name">3ZeBra 三隻斑馬</div>
-                    <div class="lp-card-sub">折折墊募資頁面</div>
+                    <div class="lp-card-sub" data-en="Crowdfunding Page">折折墊募資頁面</div>
                   </div>
                   <div class="lp-toggle-wrap">
-                    <button class="lp-toggle active" data-mode="plan">企劃</button>
-                    <button class="lp-toggle" data-mode="result">成品</button>
+                    <button class="lp-toggle active" data-mode="plan" data-en="Plan">企劃</button>
+                    <button class="lp-toggle" data-mode="result" data-en="Result">成品</button>
                   </div>
                 </div>
                 <div class="lp-img-area">
@@ -514,12 +515,12 @@
               <div class="lp-card">
                 <div class="lp-card-top">
                   <div class="lp-card-info">
-                    <div class="lp-card-name">紅杉宅料理</div>
-                    <div class="lp-card-sub">新版商品頁</div>
+                    <div class="lp-card-name" data-en="Hongsan Home Cooking">紅杉宅料理</div>
+                    <div class="lp-card-sub" data-en="Product Page Revamp">新版商品頁</div>
                   </div>
                   <div class="lp-toggle-wrap">
-                    <button class="lp-toggle active" data-mode="plan">企劃</button>
-                    <button class="lp-toggle" data-mode="result">成品</button>
+                    <button class="lp-toggle active" data-mode="plan" data-en="Plan">企劃</button>
+                    <button class="lp-toggle" data-mode="result" data-en="Result">成品</button>
                   </div>
                 </div>
                 <div class="lp-img-area">
@@ -539,11 +540,11 @@
                 <div class="lp-card-top">
                   <div class="lp-card-info">
                     <div class="lp-card-name">4 Friends 皮在癢</div>
-                    <div class="lp-card-sub">商品頁面更新</div>
+                    <div class="lp-card-sub" data-en="Product Page Update">商品頁面更新</div>
                   </div>
                   <div class="lp-toggle-wrap">
-                    <button class="lp-toggle active" data-mode="plan">企劃</button>
-                    <button class="lp-toggle" data-mode="result">成品</button>
+                    <button class="lp-toggle active" data-mode="plan" data-en="Plan">企劃</button>
+                    <button class="lp-toggle" data-mode="result" data-en="Result">成品</button>
                   </div>
                 </div>
                 <div class="lp-img-area">
@@ -562,12 +563,12 @@
               <div class="lp-card">
                 <div class="lp-card-top">
                   <div class="lp-card-info">
-                    <div class="lp-card-name">LifeRiCH 太空碗</div>
-                    <div class="lp-card-sub">新品頁面企劃</div>
+                    <div class="lp-card-name" data-en="LifeRiCH Space Bowl">LifeRiCH 太空碗</div>
+                    <div class="lp-card-sub" data-en="New Product Page">新品頁面企劃</div>
                   </div>
                   <div class="lp-toggle-wrap">
-                    <button class="lp-toggle active" data-mode="plan">企劃</button>
-                    <button class="lp-toggle" data-mode="result">成品</button>
+                    <button class="lp-toggle active" data-mode="plan" data-en="Plan">企劃</button>
+                    <button class="lp-toggle" data-mode="result" data-en="Result">成品</button>
                   </div>
                 </div>
                 <div class="lp-img-area">
@@ -587,11 +588,11 @@
                 <div class="lp-card-top">
                   <div class="lp-card-info">
                     <div class="lp-card-name">Eira Care 面膜</div>
-                    <div class="lp-card-sub">靈芝積雪草修護保濕面膜</div>
+                    <div class="lp-card-sub" data-en="Reishi &amp; Centella Hydra-Repair Mask">靈芝積雪草修護保濕面膜</div>
                   </div>
                   <div class="lp-toggle-wrap">
-                    <button class="lp-toggle active" data-mode="plan">企劃</button>
-                    <button class="lp-toggle" data-mode="result">成品</button>
+                    <button class="lp-toggle active" data-mode="plan" data-en="Plan">企劃</button>
+                    <button class="lp-toggle" data-mode="result" data-en="Result">成品</button>
                   </div>
                 </div>
                 <div class="lp-img-area">
@@ -625,16 +626,16 @@
       <div class="sp-inner">
         <div class="sp-heading-block">
           <span class="eyebrow">Social Media</span>
-          <h2>社群企劃</h2>
-          <p>LINE、Instagram 貼文內容企劃與視覺設計，從品牌策略到排程發文全程統籌。</p>
-          <span class="design-note">※ 平面設計另外跟設計師合作</span>
+          <h2 data-en="Social Media Planning">社群企劃</h2>
+          <p data-en="LINE and Instagram content planning and visual design — from brand strategy to scheduling and publishing.">LINE、Instagram 貼文內容企劃與視覺設計，從品牌策略到排程發文全程統籌。</p>
+          <span class="design-note" data-en="※ Visual design in collaboration with a dedicated designer">※ 平面設計另外跟設計師合作</span>
         </div>
 
         <div class="tab-group" data-tabs>
           <div class="tab-bar">
-            <button class="tab-btn active" data-target="soc-hongsan">紅杉宅料理</button>
+            <button class="tab-btn active" data-target="soc-hongsan" data-en="Hongsan Home Cooking">紅杉宅料理</button>
             <button class="tab-btn" data-target="soc-4friends">4Friends</button>
-            <button class="tab-btn" data-target="soc-xintai">心泰悟居</button>
+            <button class="tab-btn" data-target="soc-xintai" data-en="Xintai">心泰悟居</button>
           </div>
 
           <!-- 紅杉宅料理 -->
@@ -700,6 +701,7 @@
 
   </main>
 
+  <script src="script.js"></script>
   <script>
     // Tab groups
     document.querySelectorAll('[data-tabs]').forEach(group => {

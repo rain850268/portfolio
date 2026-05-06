@@ -6,7 +6,7 @@
   <title>行銷企劃案例 — Josephine Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap">
   <link rel="stylesheet" href="style.css">
   <style>
     /* ── Page Nav ── */
@@ -330,12 +330,13 @@
 
   <header class="mp-header">
     <nav class="mp-nav">
-      <a href="index.html" class="mp-back">← 回作品集</a>
+      <a href="index.html" class="mp-back" data-en="← Back to Portfolio">← 回作品集</a>
       <div class="mp-anchors">
-        <a href="#process">企劃流程</a>
-        <a href="#cases">精選案例</a>
-        <a href="#dashboard">視覺化報表</a>
+        <a href="#process" data-en="Planning Flow">企劃流程</a>
+        <a href="#cases" data-en="Cases">精選案例</a>
+        <a href="#dashboard" data-en="Dashboard">視覺化報表</a>
       </div>
+      <button class="lang-toggle" id="langToggle" style="margin-left:auto">EN</button>
     </nav>
   </header>
 
@@ -348,54 +349,54 @@
       <div class="mp-inner">
         <div class="mp-heading-block">
           <span class="eyebrow">Planning Framework</span>
-          <h2>行銷企劃 · 品牌策略</h2>
-          <p>從市調定位到上線推廣，每個環節都有完整的框架與執行 SOP，確保策略落地、目標可達。</p>
+          <h2 data-en="Marketing Planning · Brand Strategy">行銷企劃 · 品牌策略</h2>
+          <p data-en="From market research to launch — every step follows a structured framework and execution SOP to ensure strategy lands and goals are achievable.">從市調定位到上線推廣，每個環節都有完整的框架與執行 SOP，確保策略落地、目標可達。</p>
         </div>
 
         <!-- 商品企劃 -->
         <div class="process-group">
-          <p class="process-group-label">商品企劃項目</p>
+          <p class="process-group-label" data-en="Product Planning">商品企劃項目</p>
           <div class="process-flow">
             <div class="process-step">
               <div class="step-num">01</div>
-              <div class="step-title">產品定位階段</div>
+              <div class="step-title" data-en="Product Positioning">產品定位階段</div>
               <div class="step-tags">
-                <span class="step-tag">競品市調</span>
+                <span class="step-tag" data-en="Competitor Research">競品市調</span>
                 <span class="step-tag">Persona</span>
-                <span class="step-tag">產品定位</span>
-                <span class="step-tag">顧客價值</span>
-                <span class="step-tag">產品命名</span>
+                <span class="step-tag" data-en="Positioning">產品定位</span>
+                <span class="step-tag" data-en="Customer Value">顧客價值</span>
+                <span class="step-tag" data-en="Naming">產品命名</span>
                 <span class="step-tag">Slogan</span>
                 <span class="step-tag">Hashtag</span>
-                <span class="step-tag">時程規劃</span>
+                <span class="step-tag" data-en="Timeline">時程規劃</span>
               </div>
             </div>
             <div class="process-step">
               <div class="step-num">02</div>
-              <div class="step-title">架構設計・視覺企劃</div>
+              <div class="step-title" data-en="Structure &amp; Visual Planning">架構設計・視覺企劃</div>
               <div class="step-tags">
-                <span class="step-tag">產品頁面架構</span>
-                <span class="step-tag">頁面參考視覺</span>
-                <span class="step-tag">拍攝企劃簡報</span>
+                <span class="step-tag" data-en="Page Architecture">產品頁面架構</span>
+                <span class="step-tag" data-en="Visual Reference">頁面參考視覺</span>
+                <span class="step-tag" data-en="Shoot Brief">拍攝企劃簡報</span>
               </div>
             </div>
             <div class="process-step">
               <div class="step-num">03</div>
-              <div class="step-title">銷售策略</div>
+              <div class="step-title" data-en="Sales Strategy">銷售策略</div>
               <div class="step-tags">
-                <span class="step-tag">定價規劃</span>
-                <span class="step-tag">組合策略</span>
-                <span class="step-tag">優惠方案</span>
-                <span class="step-tag">贈品設計</span>
+                <span class="step-tag" data-en="Pricing">定價規劃</span>
+                <span class="step-tag" data-en="Bundling">組合策略</span>
+                <span class="step-tag" data-en="Promotions">優惠方案</span>
+                <span class="step-tag" data-en="Gift Design">贈品設計</span>
               </div>
             </div>
             <div class="process-step">
               <div class="step-num">04</div>
-              <div class="step-title">社群推廣</div>
+              <div class="step-title" data-en="Social Promotion">社群推廣</div>
               <div class="step-tags">
-                <span class="step-tag">社群推廣企劃</span>
-                <span class="step-tag">社群文案撰稿</span>
-                <span class="step-tag">FB 推播</span>
+                <span class="step-tag" data-en="Social Campaign">社群推廣企劃</span>
+                <span class="step-tag" data-en="Copywriting">社群文案撰稿</span>
+                <span class="step-tag" data-en="FB Push">FB 推播</span>
                 <span class="step-tag">SMS</span>
                 <span class="step-tag">EDM</span>
                 <span class="step-tag">LINE</span>
@@ -406,41 +407,41 @@
 
         <!-- 活動企劃 -->
         <div class="process-group">
-          <p class="process-group-label">活動企劃項目</p>
+          <p class="process-group-label" data-en="Campaign Planning">活動企劃項目</p>
           <div class="process-flow">
             <div class="process-step">
               <div class="step-num">01</div>
-              <div class="step-title">活動主題設定</div>
+              <div class="step-title" data-en="Theme Setting">活動主題設定</div>
               <div class="step-tags">
-                <span class="step-tag">視覺概念</span>
-                <span class="step-tag">主題命名</span>
-                <span class="step-tag">視覺企劃</span>
+                <span class="step-tag" data-en="Visual Concept">視覺概念</span>
+                <span class="step-tag" data-en="Theme Naming">主題命名</span>
+                <span class="step-tag" data-en="Visual Planning">視覺企劃</span>
               </div>
             </div>
             <div class="process-step">
               <div class="step-num">02</div>
-              <div class="step-title">架構設計・視覺企劃</div>
+              <div class="step-title" data-en="Structure &amp; Visual Planning">架構設計・視覺企劃</div>
               <div class="step-tags">
-                <span class="step-tag">頁面架構</span>
-                <span class="step-tag">參考視覺</span>
+                <span class="step-tag" data-en="Page Layout">頁面架構</span>
+                <span class="step-tag" data-en="Visual Reference">參考視覺</span>
               </div>
             </div>
             <div class="process-step">
               <div class="step-num">03</div>
-              <div class="step-title">銷售策略</div>
+              <div class="step-title" data-en="Sales Strategy">銷售策略</div>
               <div class="step-tags">
-                <span class="step-tag">定價規劃</span>
-                <span class="step-tag">組合策略</span>
-                <span class="step-tag">優惠方案</span>
-                <span class="step-tag">贈品設計</span>
+                <span class="step-tag" data-en="Pricing">定價規劃</span>
+                <span class="step-tag" data-en="Bundling">組合策略</span>
+                <span class="step-tag" data-en="Promotions">優惠方案</span>
+                <span class="step-tag" data-en="Gift Design">贈品設計</span>
               </div>
             </div>
             <div class="process-step">
               <div class="step-num">04</div>
-              <div class="step-title">社群推廣</div>
+              <div class="step-title" data-en="Social Promotion">社群推廣</div>
               <div class="step-tags">
-                <span class="step-tag">社群推廣企劃</span>
-                <span class="step-tag">社群文案撰稿</span>
+                <span class="step-tag" data-en="Social Campaign">社群推廣企劃</span>
+                <span class="step-tag" data-en="Copywriting">社群文案撰稿</span>
                 <span class="step-tag">EDM</span>
                 <span class="step-tag">LINE</span>
               </div>
@@ -458,8 +459,8 @@
       <div class="mp-inner">
         <div class="mp-heading-block">
           <span class="eyebrow">Portfolio</span>
-          <h2>精選案例</h2>
-          <p>每個案子都有完整的策略思維與可量化的成果。</p>
+          <h2 data-en="Selected Cases">精選案例</h2>
+          <p data-en="Every project is backed by strategic thinking and measurable results.">每個案子都有完整的策略思維與可量化的成果。</p>
         </div>
 
         <div class="cases-grid" style="grid-template-columns:repeat(3,1fr)">
@@ -468,56 +469,56 @@
             <div class="case-card-thumb" style="background-image:url(work-hongsan.jpg);background-size:cover;background-position:center;"></div>
             <div>
               <div class="case-card-num">01</div>
-              <div class="case-card-cat">社群行銷 · 食品電商</div>
+              <div class="case-card-cat" data-en="Social Marketing · Food E-commerce">社群行銷 · 食品電商</div>
             </div>
-            <div class="case-card-title">紅杉宅料理｜多渠道社群行銷與自動化漏斗全案操盤</div>
+            <div class="case-card-title" data-en="Hongsan Home Cooking｜Multi-channel Social &amp; Automation Full Campaign">紅杉宅料理｜多渠道社群行銷與自動化漏斗全案操盤</div>
             <div class="case-card-metric">
-              <div class="case-metric-val">106 萬</div>
-              <div class="case-metric-label">2026 年 1 月單月總營收</div>
+              <div class="case-metric-val" data-en="NT$1.06M">106 萬</div>
+              <div class="case-metric-label" data-en="Single Month Revenue, Jan 2026">2026 年 1 月單月總營收</div>
             </div>
-            <span class="case-card-link">查看完整案例 →</span>
+            <span class="case-card-link" data-en="View full case →">查看完整案例 →</span>
           </a>
 
           <a href="3zebra-eye.html" class="case-card">
             <div class="case-card-thumb" style="background-image:url(work-3zebra.jpg);background-size:cover;background-position:center;"></div>
             <div>
               <div class="case-card-num">02</div>
-              <div class="case-card-cat">募資企劃 · 健康品牌</div>
+              <div class="case-card-cat" data-en="Crowdfunding · Health Brand">募資企劃 · 健康品牌</div>
             </div>
-            <div class="case-card-title">3ZeBra 雙層氣壓眼罩｜嘖嘖募資全案操盤</div>
+            <div class="case-card-title" data-en="3ZeBra Eye Mask｜Zeczec Crowdfunding Full Campaign">3ZeBra 雙層氣壓眼罩｜嘖嘖募資全案操盤</div>
             <div class="case-card-metric">
-              <div class="case-metric-val">677 萬</div>
-              <div class="case-metric-label">嘖嘖集資總額</div>
+              <div class="case-metric-val" data-en="NT$6.77M">677 萬</div>
+              <div class="case-metric-label" data-en="Total Crowdfunding Amount">嘖嘖集資總額</div>
             </div>
-            <span class="case-card-link">查看完整案例 →</span>
+            <span class="case-card-link" data-en="View full case →">查看完整案例 →</span>
           </a>
 
           <a href="doublebox.html" class="case-card">
             <div class="case-card-thumb" style="background-image:url(work-doublebox.jpg);background-size:cover;background-position:center;"></div>
             <div>
               <div class="case-card-num">02</div>
-              <div class="case-card-cat">行銷企劃 · 生活電商</div>
+              <div class="case-card-cat" data-en="Marketing · Lifestyle E-commerce">行銷企劃 · 生活電商</div>
             </div>
-            <div class="case-card-title">LiFE RiCH × Double Box 211 好食組行銷企劃</div>
+            <div class="case-card-title" data-en="LiFE RiCH × Double Box 211 Healthy Bundle Campaign">LiFE RiCH × Double Box 211 好食組行銷企劃</div>
             <div class="case-card-metric">
-              <div class="case-metric-val">419 萬</div>
-              <div class="case-metric-label">10 天活動總業績</div>
+              <div class="case-metric-val" data-en="NT$4.19M">419 萬</div>
+              <div class="case-metric-label" data-en="10-Day Campaign Revenue">10 天活動總業績</div>
             </div>
-            <span class="case-card-link">查看完整案例 →</span>
+            <span class="case-card-link" data-en="View full case →">查看完整案例 →</span>
           </a>
 
           <a href="spacebox.html" class="case-card">
             <div class="case-card-thumb" style="background-image:url(work-spacebox.jpg);background-size:cover;background-position:center;"></div>
             <div>
               <div class="case-card-num">03</div>
-              <div class="case-card-cat">新品銷售 · 生活電商</div>
+              <div class="case-card-cat" data-en="New Product · Lifestyle E-commerce">新品銷售 · 生活電商</div>
             </div>
-            <div class="case-card-title">LiFE RiCH × Space Box 太空保鮮碗新品上市</div>
+            <div class="case-card-title" data-en="LiFE RiCH × Space Box｜New Product Launch">LiFE RiCH × Space Box 太空保鮮碗新品上市</div>
             <div class="case-card-metric">
               <div class="case-metric-val">163%</div>
-              <div class="case-metric-label">目標達成率</div>
+              <div class="case-metric-label" data-en="Target Achievement Rate">目標達成率</div>
             </div>
-            <span class="case-card-link">查看完整案例 →</span>
+            <span class="case-card-link" data-en="View full case →">查看完整案例 →</span>
           </a>
 
         </div>
@@ -531,30 +532,30 @@
       <div class="mp-inner">
         <div class="mp-heading-block">
           <span class="eyebrow">Data Dashboard</span>
-          <h2>視覺化報表</h2>
-          <p>以自動化儀表板追蹤每月成效，讓客戶隨時掌握行銷數據，不再等月報才看數字。</p>
+          <h2 data-en="Data Dashboard">視覺化報表</h2>
+          <p data-en="Automated dashboards track monthly results so clients always know how marketing is performing — no waiting for monthly reports.">以自動化儀表板追蹤每月成效，讓客戶隨時掌握行銷數據，不再等月報才看數字。</p>
         </div>
 
         <div class="dashboard-layout">
           <div class="dashboard-text">
-            <h3>讓數據說話，讓決策更快</h3>
-            <p>針對長期合作客戶，提供客製化的即時成效儀表板。整合 LINE、EDM、自動化行銷腳本等多渠道數據，以視覺化方式呈現 ROAS、回購率、觸及成本等核心指標，讓每一筆預算的流向都清晰可追溯。</p>
+            <h3 data-en="Let Data Talk, Decide Faster">讓數據說話，讓決策更快</h3>
+            <p data-en="For long-term clients, we provide customized real-time performance dashboards integrating LINE, EDM, and marketing automation scripts. Core KPIs — ROAS, repeat purchase rate, acquisition cost — are visualized so every budget decision is fully traceable.">針對長期合作客戶，提供客製化的即時成效儀表板。整合 LINE、EDM、自動化行銷腳本等多渠道數據，以視覺化方式呈現 ROAS、回購率、觸及成本等核心指標，讓每一筆預算的流向都清晰可追溯。</p>
             <div class="dashboard-features">
               <div class="db-feature">
-                <div class="db-feature-title">多渠道整合</div>
-                <div class="db-feature-desc">LINE / EDM / 自動化行銷腳本，一頁綜觀</div>
+                <div class="db-feature-title" data-en="Multi-channel Integration">多渠道整合</div>
+                <div class="db-feature-desc" data-en="LINE / EDM / automation scripts, all in one view">LINE / EDM / 自動化行銷腳本，一頁綜觀</div>
               </div>
               <div class="db-feature">
-                <div class="db-feature-title">核心 KPI 追蹤</div>
-                <div class="db-feature-desc">ROAS、回購率、觸及成本，月度趨勢一目瞭然</div>
+                <div class="db-feature-title" data-en="Core KPI Tracking">核心 KPI 追蹤</div>
+                <div class="db-feature-desc" data-en="ROAS, repeat rate, acquisition cost — monthly trends at a glance">ROAS、回購率、觸及成本，月度趨勢一目瞭然</div>
               </div>
               <div class="db-feature">
-                <div class="db-feature-title">自動化腳本績效</div>
-                <div class="db-feature-desc">新客流程、購物車回收、會員喚回，累積成效完整呈現</div>
+                <div class="db-feature-title" data-en="Automation Performance">自動化腳本績效</div>
+                <div class="db-feature-desc" data-en="New customer flows, cart recovery, win-back — full cumulative results">新客流程、購物車回收、會員喚回，累積成效完整呈現</div>
               </div>
               <div class="db-feature">
-                <div class="db-feature-title">行銷排程紀錄</div>
-                <div class="db-feature-desc">每次推播主題、名單數、開信率一覽，方便覆盤優化</div>
+                <div class="db-feature-title" data-en="Campaign Log">行銷排程紀錄</div>
+                <div class="db-feature-desc" data-en="Every broadcast: topic, list size, open rate — all logged for easy review">每次推播主題、名單數、開信率一覽，方便覆盤優化</div>
               </div>
             </div>
           </div>
@@ -568,5 +569,6 @@
 
   </main>
 
+  <script src="script.js"></script>
 </body>
 </html>

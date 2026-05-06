@@ -6,7 +6,7 @@
   <title>Meta 廣告投放案例 — Josephine Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap">
   <link rel="stylesheet" href="style.css">
   <style>
     .mp-header {
@@ -273,11 +273,12 @@
 
   <header class="mp-header">
     <nav class="mp-nav">
-      <a href="index.html" class="mp-back">← 回作品集</a>
+      <a href="index.html" class="mp-back" data-en="← Back to Portfolio">← 回作品集</a>
       <div class="mp-anchors">
-        <a href="#process">操作框架</a>
-        <a href="#cases">精選案例</a>
+        <a href="#process" data-en="Framework">操作框架</a>
+        <a href="#cases" data-en="Cases">精選案例</a>
       </div>
+      <button class="lang-toggle" id="langToggle" style="margin-left:auto">EN</button>
     </nav>
   </header>
 
@@ -290,41 +291,41 @@
       <div class="mp-inner">
         <div class="mp-heading-block">
           <span class="eyebrow">Meta Ads</span>
-          <h2>Meta 廣告投放</h2>
-          <p>透明化數據流程，從帳戶架構建立到每月覆盤，讓每一分預算的流向都清晰可追溯。</p>
+          <h2 data-en="Meta Advertising">Meta 廣告投放</h2>
+          <p data-en="Transparent data flow — from account structure setup to monthly reviews, every budget decision is fully traceable.">透明化數據流程，從帳戶架構建立到每月覆盤，讓每一分預算的流向都清晰可追溯。</p>
         </div>
 
         <div class="process-group">
-          <p class="process-group-label">廣告操作框架</p>
+          <p class="process-group-label" data-en="Ad Framework">廣告操作框架</p>
           <div class="process-flow">
             <div class="process-step">
               <div class="step-num">01</div>
-              <div class="step-title">受眾架構建立</div>
+              <div class="step-title" data-en="Audience Setup">受眾架構建立</div>
               <div class="step-tags">
-                <span class="step-tag">Meta Pixel 安裝</span>
-                <span class="step-tag">新舊客行銷</span>
+                <span class="step-tag" data-en="Meta Pixel Setup">Meta Pixel 安裝</span>
+                <span class="step-tag" data-en="New &amp; Returning">新舊客行銷</span>
               </div>
             </div>
             <div class="process-step">
               <div class="step-num">02</div>
-              <div class="step-title">素材測試</div>
-              <p class="step-desc">透過廣告＋剪輯師的經驗，精準抓住吸引人、說服力高的素材</p>
+              <div class="step-title" data-en="Creative Testing">素材測試</div>
+              <p class="step-desc" data-en="Leveraging ad expertise and editing experience to identify high-impact, persuasive creatives.">透過廣告＋剪輯師的經驗，精準抓住吸引人、說服力高的素材</p>
             </div>
             <div class="process-step">
               <div class="step-num">03</div>
-              <div class="step-title">成效追蹤</div>
+              <div class="step-title" data-en="Performance Tracking">成效追蹤</div>
               <div class="step-tags">
-                <span class="step-tag">每週文字回報</span>
-                <span class="step-tag">ROAS 監控</span>
+                <span class="step-tag" data-en="Weekly Reports">每週文字回報</span>
+                <span class="step-tag" data-en="ROAS Monitoring">ROAS 監控</span>
               </div>
             </div>
             <div class="process-step">
               <div class="step-num">04</div>
-              <div class="step-title">優化覆盤</div>
+              <div class="step-title" data-en="Optimize &amp; Review">優化覆盤</div>
               <div class="step-tags">
-                <span class="step-tag">每月簡報覆盤</span>
-                <span class="step-tag">預算分配調整</span>
-                <span class="step-tag">月度策略優化</span>
+                <span class="step-tag" data-en="Monthly Deck Review">每月簡報覆盤</span>
+                <span class="step-tag" data-en="Budget Reallocation">預算分配調整</span>
+                <span class="step-tag" data-en="Monthly Strategy Refresh">月度策略優化</span>
               </div>
             </div>
           </div>
@@ -340,8 +341,8 @@
       <div class="mp-inner">
         <div class="mp-heading-block">
           <span class="eyebrow">Portfolio</span>
-          <h2>精選案例</h2>
-          <p>每個案子都有完整的策略思維與可量化的成果。</p>
+          <h2 data-en="Selected Cases">精選案例</h2>
+          <p data-en="Every project is backed by strategic thinking and measurable results.">每個案子都有完整的策略思維與可量化的成果。</p>
         </div>
 
         <div class="cases-grid">
@@ -350,50 +351,50 @@
             <div class="case-card-thumb" style="background-image:url(work-yp.jpg);background-size:cover;background-position:center;"></div>
             <div>
               <div class="case-card-num">01</div>
-              <div class="case-card-cat">Meta 廣告 · 服飾電商</div>
+              <div class="case-card-cat" data-en="Meta Ads · Fashion E-commerce">Meta 廣告 · 服飾電商</div>
             </div>
-            <div class="case-card-title">YP Style｜Meta 廣告投放與品牌營運全案優化</div>
-            <p class="case-card-desc">從近乎無系統化投廣狀態出發，建立完整廣告漏斗架構，整合商品季節策略、官網轉換優化與每月數據化覆盤，全面推動品牌營收成長。</p>
+            <div class="case-card-title" data-en="YP Style｜Meta Ads &amp; Full-Brand Growth">YP Style｜Meta 廣告投放與品牌營運全案優化</div>
+            <p class="case-card-desc" data-en="Starting from an almost unsystematic ad setup, we built a complete funnel, integrated seasonal product strategy, website conversion optimization, and monthly data reviews to drive brand revenue growth.">從近乎無系統化投廣狀態出發，建立完整廣告漏斗架構，整合商品季節策略、官網轉換優化與每月數據化覆盤，全面推動品牌營收成長。</p>
             <div class="case-card-metrics">
               <div>
                 <div class="case-metric-val">7.36</div>
-                <div class="case-metric-label">最高 ROAS</div>
+                <div class="case-metric-label" data-en="Peak ROAS">最高 ROAS</div>
               </div>
               <div>
                 <div class="case-metric-val">+669%</div>
-                <div class="case-metric-label">廣告月營收成長</div>
+                <div class="case-metric-label" data-en="Ad Revenue Growth">廣告月營收成長</div>
               </div>
               <div>
                 <div class="case-metric-val">+277%</div>
-                <div class="case-metric-label">ROAS 成長幅度</div>
+                <div class="case-metric-label" data-en="ROAS Growth">ROAS 成長幅度</div>
               </div>
             </div>
-            <span class="case-card-link">查看完整案例 →</span>
+            <span class="case-card-link" data-en="View full case →">查看完整案例 →</span>
           </a>
 
           <a href="xintai.html" class="case-card">
             <div class="case-card-thumb" style="background-image:url(work-xintai.jpg);background-size:cover;background-position:center;"></div>
             <div>
               <div class="case-card-num">02</div>
-              <div class="case-card-cat">Meta 廣告 · 命理品牌</div>
+              <div class="case-card-cat" data-en="Meta Ads · Astrology Brand">Meta 廣告 · 命理品牌</div>
             </div>
-            <div class="case-card-title">心泰悟居｜命理諮詢品牌 Meta 廣告 × 社群內容重塑</div>
-            <p class="case-card-desc">從零建立品牌廣告投放模型，同步全面重塑 IG 社群內容與視覺，讓帳號從單純曝光頁面轉型為具轉換力的品牌資產，私訊獲客成本大幅下降。</p>
+            <div class="case-card-title" data-en="Xintai｜Astrology Brand Meta Ads × Social Rebrand">心泰悟居｜命理諮詢品牌 Meta 廣告 × 社群內容重塑</div>
+            <p class="case-card-desc" data-en="Built the brand's ad model from scratch while simultaneously overhauling IG content and visuals — transforming the account from a passive page into a converting brand asset, with DM acquisition costs dropping significantly.">從零建立品牌廣告投放模型，同步全面重塑 IG 社群內容與視覺，讓帳號從單純曝光頁面轉型為具轉換力的品牌資產，私訊獲客成本大幅下降。</p>
             <div class="case-card-metrics">
               <div>
                 <div class="case-metric-val">-64.7%</div>
-                <div class="case-metric-label">訊息成本下降</div>
+                <div class="case-metric-label" data-en="DM Cost Drop">訊息成本下降</div>
               </div>
               <div>
                 <div class="case-metric-val">-74.6%</div>
-                <div class="case-metric-label">新訊息成本下降</div>
+                <div class="case-metric-label" data-en="New DM Cost Drop">新訊息成本下降</div>
               </div>
               <div>
                 <div class="case-metric-val">1,000+</div>
-                <div class="case-metric-label">穩定粉絲規模</div>
+                <div class="case-metric-label" data-en="Stable Follower Base">穩定粉絲規模</div>
               </div>
             </div>
-            <span class="case-card-link">查看完整案例 →</span>
+            <span class="case-card-link" data-en="View full case →">查看完整案例 →</span>
           </a>
 
         </div>
@@ -402,5 +403,6 @@
 
   </main>
 
+  <script src="script.js"></script>
 </body>
 </html>
