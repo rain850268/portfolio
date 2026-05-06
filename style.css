@@ -13,9 +13,9 @@
   --hl:          #D0DCDC;   /* highlighter */
   --white:       #FFFFFF;
 
-  --sans:  'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --num:   'Rubik', sans-serif;
+  --sans:  'Rubik', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif: 'Rubik', 'Noto Sans TC', sans-serif;
+  --num:   'Rubik', 'Noto Sans TC', sans-serif;
 
   --r:    3px;
   --rl:   6px;
@@ -182,7 +182,7 @@ ul  { list-style: none; }
 .hero::after {
   content: 'J';
   position: absolute;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 60vw;
   font-weight: 300;
   color: var(--hl);
@@ -202,14 +202,14 @@ ul  { list-style: none; }
   margin-bottom: 1.5rem;
 }
 .hero-name-zh {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(2.6rem, 5.5vw, 4.8rem);
   font-weight: 300;
   line-height: 1;
   color: var(--text);
 }
 .hero-name-en {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(1.1rem, 2.2vw, 1.8rem);
   font-weight: 300;
   line-height: 1.2;
@@ -338,7 +338,7 @@ ul  { list-style: none; }
 .svc-thumb-2 { background: linear-gradient(145deg, #D8E4E4 0%, #C4D4D4 100%); }
 .svc-thumb-3 { background: linear-gradient(145deg, #E4ECEC 0%, #CDD8D8 100%); }
 .svc-thumb-label {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.6rem;
   font-weight: 300;
   letter-spacing: .15em;
@@ -385,7 +385,7 @@ ul  { list-style: none; }
 .wv-4 { background: linear-gradient(145deg, #EAF0F0 0%, #D4E0E0 100%); }
 .wv-5 { background: linear-gradient(145deg, #E8EFE0 0%, #D0DFC0 100%); }
 .wv-label {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 1.8rem;
   font-weight: 300;
   letter-spacing: .2em;
