@@ -94,6 +94,50 @@ if (caseTabs.length) {
   if (saved === 'en') applyLang('en');
 })();
 
+/* ── Inquiry Builder ── */
+(function () {
+  const pills     = document.querySelectorAll('.inquiry-pill');
+  const nameInput = document.getElementById('inquiryName');
+  const brandInput= document.getElementById('inquiryBrand');
+  const output    = document.getElementById('inquiryOutput');
+  const copyBtn   = document.getElementById('inquiryCopy');
+
+  if (!output) return;
+
+  function buildText() {
+    const name  = nameInput.value.trim() || '___';
+    const brand = brandInput.value.trim() || '___';
+    const svcs  = [...document.querySelectorAll('.inquiry-pill.selected')]
+                    .map(p => p.dataset.svc);
+    if (!svcs.length) {
+      output.value = '';
+      return;
+    }
+    output.value =
+      `嗨 Josephine！我是 ${name}，品牌是「${brand}」。\n` +
+      `想詢問：${svcs.join('、')} 的合作方案，\n` +
+      `請問可以幫我評估看看嗎？謝謝！`;
+  }
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pill.classList.toggle('selected');
+      buildText();
+    });
+  });
+
+  [nameInput, brandInput].forEach(el => el.addEventListener('input', buildText));
+
+  copyBtn.addEventListener('click', () => {
+    if (!output.value) return;
+    navigator.clipboard.writeText(output.value).then(() => {
+      const orig = copyBtn.textContent;
+      copyBtn.textContent = '✓ 已複製！';
+      setTimeout(() => { copyBtn.textContent = orig; }, 2200);
+    });
+  });
+})();
+
 /* ── Contact form → mailto ── */
 const contactForm = document.getElementById('contactForm');
 if (contactForm) contactForm.addEventListener('submit', e => {

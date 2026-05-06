@@ -628,6 +628,163 @@ ul  { list-style: none; }
 }
 .dash-showcase-img img { width: 100%; display: block; }
 
+/* ── Testimonials ── */
+.testimonials {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+}
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.testi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.testi-mark {
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--border);
+  line-height: .7;
+  margin-bottom: .75rem;
+  font-family: var(--serif);
+  letter-spacing: -.02em;
+}
+.testi-quote {
+  font-size: .9rem;
+  color: var(--text);
+  line-height: 1.85;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+.testi-author {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.testi-name {
+  font-size: .84rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.testi-brand {
+  font-size: .76rem;
+  color: var(--text-mid);
+  margin-top: .2rem;
+}
+
+/* ── Inquiry Builder ── */
+.inquiry-builder {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  padding: 2rem;
+  margin: 2.5rem 0 2rem;
+}
+.inquiry-builder-label {
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  margin-bottom: 1.25rem;
+}
+.inquiry-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+.inquiry-field label {
+  display: block;
+  font-size: .76rem;
+  color: var(--text-mid);
+  margin-bottom: .35rem;
+}
+.inquiry-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: .6rem .85rem;
+  font-family: var(--sans);
+  font-size: .88rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color var(--t);
+  box-sizing: border-box;
+}
+.inquiry-input:focus { outline: none; border-color: var(--text-mid); }
+.inquiry-input::placeholder { color: var(--text-light); }
+.inquiry-pills-label {
+  font-size: .76rem;
+  color: var(--text-mid);
+  margin-bottom: .6rem;
+}
+.inquiry-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-bottom: 1.5rem;
+}
+.inquiry-pill {
+  padding: .35rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  font-size: .78rem;
+  font-family: var(--sans);
+  color: var(--text-mid);
+  cursor: pointer;
+  background: var(--bg);
+  transition: background var(--t), color var(--t), border-color var(--t);
+  user-select: none;
+}
+.inquiry-pill:hover { border-color: var(--text-mid); color: var(--text); }
+.inquiry-pill.selected { background: var(--text); color: var(--white); border-color: var(--text); }
+.inquiry-output {
+  width: 100%;
+  min-height: 5.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: .9rem 1rem;
+  font-family: var(--sans);
+  font-size: .88rem;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.85;
+  resize: none;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+.inquiry-output:focus { outline: none; }
+.inquiry-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .6rem 1.4rem;
+  background: var(--text);
+  color: var(--white);
+  border: none;
+  border-radius: var(--r);
+  font-family: var(--sans);
+  font-size: .82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity var(--t);
+  letter-spacing: .02em;
+}
+.inquiry-copy-btn:hover { opacity: .75; }
+.inquiry-note {
+  font-size: .85rem;
+  color: var(--text-mid);
+  margin-top: 1.25rem;
+  line-height: 1.7;
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .about { grid-template-columns: 1fr; }
@@ -645,6 +802,8 @@ ul  { list-style: none; }
   .highlight-grid { grid-template-columns: 1fr 1fr; }
   .brand-overview { grid-template-columns: 1fr; }
   .result-sub-grid { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr 1fr; }
+  .inquiry-inputs { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {
   .container { padding: 0 1.5rem; }
@@ -664,4 +823,5 @@ ul  { list-style: none; }
   .case-cta { flex-direction: column; }
   .about-stats { gap: 1.5rem; }
   .highlight-grid { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
 }
