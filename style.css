@@ -448,13 +448,13 @@ ul  { list-style: none; }
 }
 .wm { display: flex; flex-direction: column; }
 .wm-n {
-  font-family: var(--serif);
+  font-family: var(--num);
   font-size: 1.75rem;
   font-weight: 300;
   color: var(--text);
   line-height: 1;
 }
-.wm-l { font-size: .75rem; color: var(--text-light); margin-top: .2rem; }
+.wm-l { font-size: .8rem; color: var(--text-mid); margin-top: .2rem; }
 .work-item-link {
   display: inline-flex;
   align-items: center;
