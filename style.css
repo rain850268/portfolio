@@ -635,37 +635,82 @@ ul  { list-style: none; }
 }
 .testi-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
   margin-top: 3rem;
 }
 .testi-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--rl);
-  padding: 1.75rem 1.5rem;
   display: flex;
   flex-direction: column;
 }
-.testi-mark {
-  font-size: 2.8rem;
-  font-weight: 300;
-  color: var(--border);
-  line-height: .7;
-  margin-bottom: .75rem;
-  font-family: var(--serif);
-  letter-spacing: -.02em;
+.testi-bubble {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--rl);
+  padding: 1.5rem;
+  position: relative;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+.testi-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 1.5rem;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 9px solid var(--border);
+}
+.testi-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: calc(1.5rem + 1px);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 8px solid var(--surface);
+}
+.testi-tag {
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: var(--text-light);
+  text-transform: uppercase;
+  margin-bottom: .85rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.testi-tag::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 1px;
+  background: var(--border);
+  flex-shrink: 0;
 }
 .testi-quote {
   font-size: .9rem;
   color: var(--text);
   line-height: 1.85;
-  flex: 1;
-  margin-bottom: 1.25rem;
 }
-.testi-author {
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
+.testi-author-row {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding-left: .5rem;
+}
+.testi-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  font-weight: 500;
+  flex-shrink: 0;
+  color: var(--text);
 }
 .testi-name {
   font-size: .84rem;
@@ -675,7 +720,7 @@ ul  { list-style: none; }
 .testi-brand {
   font-size: .76rem;
   color: var(--text-mid);
-  margin-top: .2rem;
+  margin-top: .15rem;
 }
 
 /* ── Inquiry Builder ── */
@@ -802,7 +847,6 @@ ul  { list-style: none; }
   .highlight-grid { grid-template-columns: 1fr 1fr; }
   .brand-overview { grid-template-columns: 1fr; }
   .result-sub-grid { grid-template-columns: 1fr; }
-  .testi-grid { grid-template-columns: 1fr 1fr; }
   .inquiry-inputs { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {
